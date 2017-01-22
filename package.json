@@ -3,9 +3,6 @@
   "version": "0.0.0",
   "description": "Material Design implementation of Tabs",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": {
     "name": "Kyle Roach",
     "email": "kroach.work@gmail.com"
