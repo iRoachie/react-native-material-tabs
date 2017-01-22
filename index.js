@@ -73,7 +73,6 @@ class MaterialTabs extends Component {
 
     const styles = StyleSheet.create({
       tabBar: {
-        flex: 1,
         backgroundColor: this.props.barColor,
         maxHeight: 48
       },
