@@ -28,3 +28,13 @@ import MaterialTabs from 'react-native-material-tabs';
   selectedIndex={this.state.selectedTab}
   onChange={this.setTab.bind(this)}/>
 ```
+
+
+## Available Props
+| prop | default | type | description |
+| ---- | ---- | ----| ---- |
+| activeIndicatorColor | #fff | string | Color of the indicator for the selected tab |
+| barColor | #13897b | string | Color of the tab bar |
+| items | none | array(string) | The headers for the individual tabs |
+| selectedIndex | 0 | number | The index of currrent tab selected. Indexes are mapped to the items prop |
+| onChange | none | Function | Handler that's emitted every time the user presses a tab. You can use this change the selected index  | 
