@@ -15,7 +15,7 @@ npm i --save react-native-material-tabs
 Or if you use yarn
 
 ```bash
-yarn add react-native-materia-tabs
+yarn add react-native-material-tabs
 ```
 #### Step 2
 Start using the component.
