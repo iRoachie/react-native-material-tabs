@@ -7,5 +7,21 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "iroachie",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iRoachie/react-native-material-tabs.git"
+  },
+  "keywords": [
+    "react",
+    "react",
+    "native",
+    "material",
+    "design",
+    "tabs"
+  ],
+  "bugs": {
+    "url": "https://github.com/iRoachie/react-native-material-tabs/issues"
+  },
+  "homepage": "https://github.com/iRoachie/react-native-material-tabs#readme"
 }
