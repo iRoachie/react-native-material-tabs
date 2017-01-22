@@ -6,8 +6,10 @@ import {
   StyleSheet,
   Dimensions,
   TouchableNativeFeedback,
+  TouchableOpacity,
   Text,
-  Animated
+  Animated,
+  Platform
 } from 'react-native';
 
 type Props = {
@@ -101,15 +103,29 @@ class MaterialTabs extends Component {
       }
     })
 
+    const tab = (item, idx) => {
+      if(Platform.OS === 'android') {
+        return (
+          <TouchableNativeFeedback key={idx} onPress={() => this.props.onChange(idx)}>
+            <View style={styles.tab}>
+              <Text style={[styles.label, this.props.selectedIndex === idx ? styles.labelSelected : '']}>{item.toUpperCase()}</Text>
+            </View>
+          </TouchableNativeFeedback>
+        )
+      }
+
+      return (
+        <TouchableOpacity key={idx} onPress={() => this.props.onChange(idx)}  style={styles.tab}>
+          <Text style={[styles.label, this.props.selectedIndex === idx ? styles.labelSelected : '']}>{item.toUpperCase()}</Text>
+        </TouchableOpacity>
+      )
+    }
+
     return (
       <View style={styles.tabBar} onLayout={this._findDimensions.bind(this)}>
         <View style={styles.tabTrack}>
           {this.props.items.map((item, idx) => (
-            <TouchableNativeFeedback key={idx} onPress={() => this.props.onChange(idx)}>
-              <View style={styles.tab}>
-                <Text style={[styles.label, this.props.selectedIndex === idx ? styles.labelSelected : '']}>{item.toUpperCase()}</Text>
-              </View>
-            </TouchableNativeFeedback>
+            tab(item, idx)
           ))}
         </View>
 
