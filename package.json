@@ -6,14 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "iroachie",
+  "author": {
+    "name": "Kyle Roach",
+    "email": "kroach.work@gmail.com"
+  },
   "license": "ISC",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/iRoachie/react-native-material-tabs.git"
   },
   "keywords": [
-    "react",
     "react",
     "native",
     "material",
