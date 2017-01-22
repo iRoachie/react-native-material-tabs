@@ -2,7 +2,7 @@
 
 Material Design implementation of Tabs.
 
-<a href="https://www.npmjs.com/package/react-native-material-tabs"><img src="https://badge.fury.io/js/react-native-material-tabs.svg" alt="" height="18"></a>
+[![npm version](https://badge.fury.io/js/react-native-material-tabs.svg)](https://badge.fury.io/js/react-native-material-tabs)
 
 ## Getting Started
 #### Step 1
