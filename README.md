@@ -33,8 +33,9 @@ import MaterialTabs from 'react-native-material-tabs';
 ## Available Props
 | prop | default | type | description |
 | ---- | ---- | ----| ---- |
-| activeIndicatorColor | #fff | string | Color of the indicator for the selected tab |
 | barColor | #13897b | string | Color of the tab bar |
+| indicatorColor | #fff | string | Color of the indicator |
+| activeTextColor | #fff | string | Color of the text for the selected tab |
 | items | none | array(string) | The headers for the individual tabs |
 | selectedIndex | 0 | number | The index of currrent tab selected. Indexes are mapped to the items prop |
 | onChange | none | Function | Handler that's emitted every time the user presses a tab. You can use this change the selected index  | 
@@ -72,9 +73,11 @@ export default class Example extends Component {
         <MaterialTabs 
           items={['One', 'Two', 'Three', 'Four', 'Five']}
           selectedIndex={this.state.selectedTab}
-          barColor="pink"
-          activeIndicatorColor="blue"
-          onChange={this.setTab.bind(this)}/>
+          onChange={this.setTab.bind(this)}
+          barColor="#1fbcd2"
+          indicatorColor="#fffe94"
+          activeTextColor="white"
+        />
       </View>
     );
   }
