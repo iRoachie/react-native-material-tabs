@@ -42,6 +42,8 @@ import MaterialTabs from 'react-native-material-tabs';
 
 
 ## Example
+![Alt Text](http://i.imgur.com/GYuMgMB.gif)
+
 ```jsx
 /**
  * Sample React Native App
