@@ -18,14 +18,16 @@ type Props = {
   indicatorColor: string,
   items: string[],
   selectedIndex: number,
-  onChange: (number) => void
+  onChange: (number) => void,
+  inactiveTextColor: string
 }
 
 type DefaultProps = {
   barColor: string,
   selectedIndex: number,
   activeTextColor: string,
-  indicatorColor: string
+  indicatorColor: string,
+  inactiveTextColor: string
 }
 
 type State = {
@@ -86,7 +88,7 @@ class MaterialTabs extends Component {
         justifyContent: 'center'
       },
       label: {
-        color: 'rgba(255, 255, 255, 0.7)',
+        color: this.props.inactiveTextColor,
         fontWeight: '500',
         fontSize: 14
       },
@@ -138,7 +140,8 @@ MaterialTabs.defaultProps = {
   barColor: '#13897b',
   indicatorColor: '#fff',
   activeTextColor: '#fff',
-  selectedIndex: 0
+  selectedIndex: 0,
+  inactiveTextColor: 'rgba(255, 255, 255, 0.7)'
 }
 
 export default MaterialTabs;
