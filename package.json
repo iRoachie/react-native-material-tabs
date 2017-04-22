@@ -12,7 +12,8 @@
   "scripts": {
     "build": "tsc",
     "lint": "node_modules/.bin/tslint -c tslint.json 'src/**/*.ts?(x)'",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
