@@ -1,14 +1,9 @@
 {
-  "extends": [
-    "tslint:latest",
-    "tslint-react"
-  ],
   "rules": {
     "member-access": false,
     "interface-name": [
       "never-prefix"
     ],
-    "ordered-imports": false,
     "object-literal-sort-keys": false,
     "trailing-comma": [
       true,
