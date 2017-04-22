@@ -4,7 +4,7 @@ Material Design implementation of [Tabs](https://material.io/guidelines/componen
 
 [![npm version](https://badge.fury.io/js/react-native-material-tabs.svg)](https://badge.fury.io/js/react-native-material-tabs)
 [![npm downloads](https://img.shields.io/npm/dt/react-native-material-tabs.svg)](https://www.npmjs.com/package/react-native-material-tabs)
-[![TypeScript](https://badges.frapsoft.com/typescript/code/typescript.svg?v=101)](https://github.com/ellerbrock/typescript-badges/)
+[![TypeScript](https://badges.frapsoft.com/typescript/code/typescript.svg?v=101)](https://www.typescriptlang.org)
 
 ## Getting Started
 #### Step 1
