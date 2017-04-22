@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "module": "es6",
+    "target": "es6",
+    "jsx": "react",
+    "sourceMap": true,
+    "outDir": "build",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true
+  },
+  "filesGlob": [
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "build"
+  ]
+}
