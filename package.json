@@ -2,12 +2,18 @@
   "name": "react-native-material-tabs",
   "version": "1.1.0",
   "description": "Material Design implementation of Tabs",
-  "main": "index.js",
+  "main": "./build/index.js",
+  "types": "./src/index.d.ts",
   "author": {
     "name": "Kyle Roach",
     "email": "kroach.work@gmail.com"
   },
   "license": "ISC",
+  "scripts": {
+    "build": "tsc",
+    "lint": "node_modules/.bin/tslint -c tslint.json 'src/**/*.ts?(x)'",
+    "prepublish": "npm run build"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/iRoachie/react-native-material-tabs.git"
@@ -21,5 +27,21 @@
   "bugs": {
     "url": "https://github.com/iRoachie/react-native-material-tabs/issues"
   },
-  "homepage": "https://github.com/iRoachie/react-native-material-tabs#readme"
+  "homepage": "https://github.com/iRoachie/react-native-material-tabs#readme",
+  "devDependencies": {
+    "@types/react": "^15.0.22",
+    "@types/react-native": "^0.43.6",
+    "react": "16.0.0-alpha.6",
+    "react-native": "0.43.3",
+    "tslint": "^5.1.0",
+    "tslint-react": "^2.6.0",
+    "typescript": "^2.2.2"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "dependencies": {
+    "styled-components": "^1.4.5"
+  }
 }
