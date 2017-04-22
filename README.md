@@ -39,6 +39,7 @@ import MaterialTabs from 'react-native-material-tabs';
 | inactiveTextColor | rgba(255, 255, 255, 0.7) | string | Color of the text for inactive tabs |
 | items | none | array(string) | The headers for the individual tabs |
 | selectedIndex | 0 | number | The index of currrent tab selected. Indexes are mapped to the items prop |
+| scrollable | false | boolean | Option between having fixed tabs or scrollable tabs
 | onChange | none | Function | Handler that's emitted every time the user presses a tab. You can use this change the selected index  | 
 
 
