@@ -1,6 +1,6 @@
 # React Native Material Tabs
 
-Material Design implementation of Tabs.
+Material Design implementation of [Tabs](https://material.io/guidelines/components/tabs.html#tabs-types-of-tabs).
 
 [![npm version](https://badge.fury.io/js/react-native-material-tabs.svg)](https://badge.fury.io/js/react-native-material-tabs)
 
@@ -18,7 +18,7 @@ Or if you use yarn
 yarn add react-native-material-tabs
 ```
 #### Step 2
-Start using the component.
+Start using the component
 
 ```jsx
 import MaterialTabs from 'react-native-material-tabs';
@@ -40,7 +40,7 @@ import MaterialTabs from 'react-native-material-tabs';
 | items | none | array(string) | The headers for the individual tabs |
 | selectedIndex | 0 | number | The index of currrent tab selected. Indexes are mapped to the items prop |
 | scrollable | false | boolean | Option between having fixed tabs or scrollable tabs
-| onChange | none | Function | Handler that's emitted every time the user presses a tab. You can use this change the selected index  | 
+| onChange | none | Function | Handler that's emitted every time the user presses a tab. You can use this to change the selected index  | 
 
 
 ## Example
