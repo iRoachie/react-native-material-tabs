@@ -3,7 +3,7 @@
   "version": "2.0.5",
   "description": "Material Design implementation of Tabs",
   "main": "./build/index.js",
-  "types": "./src/index.d.ts",
+  "types": "./index.d.ts",
   "files": [
     "build",
     "src"
