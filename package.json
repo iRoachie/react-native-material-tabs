@@ -5,7 +5,8 @@
   "main": "./build/index.js",
   "types": "./src/index.d.ts",
   "files": [
-    "build"
+    "build",
+    "src"
   ],
   "author": {
     "name": "Kyle Roach",
