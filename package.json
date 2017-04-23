@@ -4,6 +4,9 @@
   "description": "Material Design implementation of Tabs",
   "main": "./build/index.js",
   "types": "./src/index.d.ts",
+  "files": [
+    "build"
+  ],
   "author": {
     "name": "Kyle Roach",
     "email": "kroach.work@gmail.com"
