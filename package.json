@@ -2,7 +2,7 @@
   "name": "react-native-material-tabs",
   "version": "2.0.7",
   "description": "Material Design implementation of Tabs",
-  "main": "./build/index.js",
+  "main": "./index.js",
   "types": "./index.d.ts",
   "files": [
     "build",
