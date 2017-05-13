@@ -1,5 +1,5 @@
 import React from 'react'
-import {Animated} from 'react-native'
+import { Animated } from 'react-native'
 import styled from 'styled-components/native'
 
 interface IndicatorProps {

@@ -1,8 +1,6 @@
 import React from 'react'
-import {Animated, ScrollView} from 'react-native'
-import {
-  Bar
-} from './styles'
+import { Animated, ScrollView } from 'react-native'
+import { Bar } from './styles'
 import TabTrack from './TabTrack'
 import Tab from './Tab'
 import Indicator from './Indicator'
@@ -28,8 +26,12 @@ interface TabsState {
 }
 
 export default class MaterialTabs extends React.Component<TabsProps, TabsState> {
-  static defaultProps: TabsDefaultProps
   scrollView: ScrollView
+  static defaultProps: TabsDefaultProps
+  static propTypes = {
+    items: React.PropTypes.arrayOf(React.PropTypes.string).isRequired,
+    onChange: React.PropTypes.func.isRequired
+  }
 
   constructor(props: TabsProps) {
     super(props)
@@ -110,7 +112,7 @@ export default class MaterialTabs extends React.Component<TabsProps, TabsState> 
     })
   }
 
-  render() {
+  renderContent() {
     return (
       <Bar
         barColor={this.props.barColor}
@@ -118,7 +120,7 @@ export default class MaterialTabs extends React.Component<TabsProps, TabsState> 
       >
         <ScrollView
           horizontal
-          ref={(ref) => this.scrollView = ref}
+          ref={(ref: any) => this.scrollView = ref}
           showsHorizontalScrollIndicator={false}
           scrollEnabled={this.props.scrollable}
         >
@@ -145,6 +147,10 @@ export default class MaterialTabs extends React.Component<TabsProps, TabsState> 
         </ScrollView>
       </Bar>
     )
+  }
+
+  render() {
+    return this.props.items ? this.renderContent() : null
   }
 }
 
