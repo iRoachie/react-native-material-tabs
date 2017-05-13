@@ -29,7 +29,7 @@ import MaterialTabs from 'react-native-material-tabs';
 <MaterialTabs
   items={['One', 'Two', 'Three']}
   selectedIndex={this.state.selectedTab}
-  onChange={this.setTab.bind(this)}/>
+  onChange={(index) => this.setState({selectedTab: index})}/>
 ```
 
 
