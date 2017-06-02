@@ -36,11 +36,12 @@ import MaterialTabs from 'react-native-material-tabs';
 ## Available Props
 | prop | default | type | description |
 | ---- | ---- | ----| ---- |
+| contentType | text | string | Type of Tab content ('text' or 'icon') |
 | barColor | #13897b | string | Color of the tab bar |
 | indicatorColor | #fff | string | Color of the indicator |
 | activeTextColor | #fff | string | Color of the text for the selected tab |
 | inactiveTextColor | rgba(255, 255, 255, 0.7) | string | Color of the text for inactive tabs |
-| items | none | array(string) | The headers for the individual tabs |
+| items | none | array(string) | The headers for the individual tabs. If contentType is 'icon' you must pass an array of icon names from [`Ionicons`](http://ionicframework.com/docs/v2/ionicons/) by Ben Sperry (v3.0.0, **859** icons) |
 | selectedIndex | 0 | number | The index of currrent tab selected. Indexes are mapped to the items prop |
 | scrollable | false | boolean | Option between having fixed tabs or scrollable tabs
 | onChange | none | Function | Handler that's emitted every time the user presses a tab. You can use this to change the selected index  | 
