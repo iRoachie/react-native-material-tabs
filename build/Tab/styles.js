@@ -11,6 +11,10 @@ export const TabBody = styled.View`
 export const TabButton = styled(Button)`
   width: ${props => props.tabWidth}
 `
+export const IconStyle = {
+  fontSize: 28,
+  height: 30
+}
 export const TabText = styled.Text`
   color: ${props => props.color}
   fontWeight: ${Platform.OS === 'ios' ? 500 : 400}
