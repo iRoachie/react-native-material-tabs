@@ -1,11 +1,6 @@
 import React from 'react'
+import Icon from 'react-native-vector-icons/Ionicons'
 import { TabText, TabBody, TabButton } from './styles'
-function renderTextTab(color, text) {
-  return <TabText color={color}>{text.toUpperCase()}</TabText>
-}
-function renderIconTab(color, text) {
-  return <TabText color={color}>{text.toUpperCase()}</TabText>
-}
 const Tab = ({
   activeTextColor,
   active,
@@ -17,13 +12,19 @@ const Tab = ({
   contentType
 }) => {
   const color = active ? activeTextColor : inActiveTextColor
+  const renderTextTab = (color, text) => {
+    return <TabText color={color}>{text.toUpperCase()}</TabText>
+  }
+  const renderIconTab = (color, text) => {
+    return <Icon name={text} style={{ color: color }} />
+  }
   return (
     <TabButton onPress={onPress} tabWidth={tabWidth} stretch={stretch}>
       <TabBody>
 
         {contentType === 'text'
-          ? this.renderTextTab(color, text)
-          : this.renderIconTab(color, text)}
+          ? renderTextTab(color, text)
+          : renderIconTab(color, text)}
       </TabBody>
     </TabButton>
   )

@@ -18,26 +18,26 @@ interface TabProps {
   onPress?(): void
 }
 
-function renderTextTab(color, text) {
-  return (
-    <TabText color={color}>{text.toUpperCase()}</TabText>
-  )
-}
-
-function renderIconTab(color, text) {
-  return (
-    <Icon name={text} style={{color: color}}/>
-  )
-}
-
 const Tab: React.SFC<TabProps> = ({activeTextColor, active, onPress, text, inActiveTextColor, tabWidth, stretch, contentType}) => {
   const color = active ? activeTextColor : inActiveTextColor
+
+  const renderTextTab = (color, text) => {
+    return (
+      <TabText color={color}>{text.toUpperCase()}</TabText>
+    )
+  }
+
+  const renderIconTab = (color, text) => {
+    return (
+      <Icon name={text} style={{color: color}}/>
+    )
+  }
 
   return (
     <TabButton onPress={onPress} tabWidth={tabWidth} stretch={stretch}>
       <TabBody>
 
-        {(contentType === 'text') ? this.renderTextTab(color, text) : this.renderIconTab(color, text)}
+        {(contentType === 'text') ? renderTextTab(color, text) : renderIconTab(color, text)}
       </TabBody>
     </TabButton>
   )
