@@ -11,6 +11,7 @@ interface TabsDefaultProps {
   activeTextColor: string
   indicatorColor: string
   inactiveTextColor: string
+  contentType: string
   scrollable: boolean
 }
 
@@ -131,6 +132,7 @@ export default class MaterialTabs extends React.Component<TabsProps, TabsState> 
                 key={idx}
                 stretch={!this.props.scrollable}
                 onPress={() => this.props.onChange(idx)}
+                contentType={this.props.contentType || 'text'}
                 active={idx === this.props.selectedIndex}
                 activeTextColor={this.props.activeTextColor}
                 tabWidth={!this.props.scrollable ? this.state.tabWidth : this.state.barWidth * 0.4}
@@ -160,5 +162,6 @@ MaterialTabs.defaultProps = {
   activeTextColor: '#fff',
   indicatorColor: '#fff',
   inactiveTextColor: 'rgba(255, 255, 255, 0.7)',
-  scrollable: false
+  scrollable: false,
+  contentType: 'text'
 }
