@@ -21,6 +21,13 @@ interface TabsProps {
   barColor?: string
 
   /**
+   * Type of tab content ('text' or 'icon')
+   *
+   * Default is 'text'
+   */
+  contentType?: string
+
+  /**
    * Color of the text for the selected tab
    *
    * Default is #fff
