@@ -3,7 +3,8 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import {
   TabText,
   TabBody,
-  TabButton
+  TabButton,
+  IconStyle
 } from './styles'
 
 
@@ -29,7 +30,7 @@ const Tab: React.SFC<TabProps> = ({activeTextColor, active, onPress, text, inAct
 
   const renderIconTab = (color, text) => {
     return (
-      <Icon name={text} style={{color: color}}/>
+      <Icon name={text} style={[{color: color}, IconStyle]}/>
     )
   }
 
