@@ -26,7 +26,7 @@ interface TabTextProps {
 export const IconStyle = {
   fontSize: 28,
   height: 30
-};
+}
 
 export const TabText = styled.Text`
   color: ${(props: TabTextProps) => props.color}
