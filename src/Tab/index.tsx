@@ -1,5 +1,15 @@
 import React from 'react'
-import Icon from 'react-native-vector-icons/Ionicons'
+
+import Entypo from 'react-native-vector-icons/Entypo'
+import EvilIcons from 'react-native-vector-icons/EvilIcons'
+import FontAwesome from 'react-native-vector-icons/FontAwesome'
+import Foundation from 'react-native-vector-icons/Foundation'
+import Ionicons from 'react-native-vector-icons/Ionicons'
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
+import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons'
+import Zocial from 'react-native-vector-icons/Zocial'
+
 import {
   TabText,
   TabBody,
@@ -10,6 +20,7 @@ import {
 
 interface TabProps {
   text: string
+  iconSet: string
   tabWidth: number
   stretch: boolean
   activeTextColor: string
@@ -19,7 +30,7 @@ interface TabProps {
   onPress?(): void
 }
 
-const Tab: React.SFC<TabProps> = ({activeTextColor, active, onPress, text, inActiveTextColor, tabWidth, stretch, contentType}) => {
+const Tab: React.SFC<TabProps> = ({activeTextColor, active, onPress, text, inActiveTextColor, tabWidth, stretch, contentType, iconSet}) => {
   const color = active ? activeTextColor : inActiveTextColor
 
   const renderTextTab = (color, text) => {
@@ -28,17 +39,46 @@ const Tab: React.SFC<TabProps> = ({activeTextColor, active, onPress, text, inAct
     )
   }
 
-  const renderIconTab = (color, text) => {
-    return (
-      <Icon name={text} style={[{color: color}, IconStyle]}/>
-    )
+  const renderIconTab = (color, text, iconSet) => {
+    switch (iconSet) {
+      case 'Entypo':
+        return (<Entypo name={text} style={[{color: color}, IconStyle]}/>)
+      case 'EvilIcons':
+        return (<Entypo name={text} style={[{color: color}, IconStyle]}/>)
+      case 'FontAwesome':
+        return (<FontAwesome name={text} style={[{color: color}, IconStyle]}/>)
+      case 'Foundation':
+        return (<Foundation name={text} style={[{color: color}, IconStyle]}/>)
+      case 'Ionicons':
+        return (<Ionicons name={text} style={[{color: color}, IconStyle]}/>)
+      case 'MaterialCommunityIcons':
+        return (<MaterialCommunityIcons name={text} style={[{color: color}, IconStyle]}/>)
+      case 'MaterialIcons':
+        return (<MaterialIcons name={text} style={[{color: color}, IconStyle]}/>)
+      case 'SimpleLineIcons':
+        return (<SimpleLineIcons name={text} style={[{color: color}, IconStyle]}/>)
+      case 'Zocial':
+        return (<Zocial name={text} style={[{color: color}, IconStyle]}/>)
+      default:
+        return (<Ionicons name={text} style={[{color: color}, IconStyle]}/>)
+    }
+  }
+
+  const renderTab = (contentType, color, text, iconSet) => {
+    switch (contentType) {
+      case 'text':
+        return renderTextTab(color, text)
+      case 'icon':
+        return renderIconTab(color, text, iconSet)
+      default:
+        return renderTextTab(color, text)
+    }
   }
 
   return (
     <TabButton onPress={onPress} tabWidth={tabWidth} stretch={stretch}>
       <TabBody>
-
-        {(contentType === 'text') ? renderTextTab(color, text) : renderIconTab(color, text)}
+        { renderTab(contentType, color, text, iconSet) }
       </TabBody>
     </TabButton>
   )

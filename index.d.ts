@@ -61,6 +61,14 @@ interface TabsProps {
   items: string[]
 
   /**
+   * IconSet from react-native-vector-icons
+   * Type: String or array of string
+   *
+   * Default is 'Ionicons'
+   */
+  iconSet: string[] | string
+
+  /**
    * Handler that's emitted every time the user presses a tab.
    * You can use this to change the selected index
    * @param index

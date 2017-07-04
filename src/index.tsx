@@ -12,6 +12,7 @@ interface TabsDefaultProps {
   indicatorColor: string
   inactiveTextColor: string
   contentType: string
+  iconSet: string[] | string
   scrollable: boolean
 }
 
@@ -113,6 +114,18 @@ export default class MaterialTabs extends React.Component<TabsProps, TabsState> 
     })
   }
 
+  getIconSet(iconSet, idx) {
+    if (typeof(iconSet) === 'string') {
+      return iconSet
+    } else {
+      if (idx < iconSet.length) {
+        return iconSet[idx]
+      } else {
+        return 'Ionicons'
+      }
+    }
+  }
+
   renderContent() {
     return (
       <Bar
@@ -132,7 +145,8 @@ export default class MaterialTabs extends React.Component<TabsProps, TabsState> 
                 key={idx}
                 stretch={!this.props.scrollable}
                 onPress={() => this.props.onChange(idx)}
-                contentType={this.props.contentType || 'text'}
+                iconSet={this.getIconSet(this.props.iconSet, idx)}
+                contentType={this.props.contentType}
                 active={idx === this.props.selectedIndex}
                 activeTextColor={this.props.activeTextColor}
                 tabWidth={!this.props.scrollable ? this.state.tabWidth : this.state.barWidth * 0.4}
@@ -163,5 +177,6 @@ MaterialTabs.defaultProps = {
   indicatorColor: '#fff',
   inactiveTextColor: 'rgba(255, 255, 255, 0.7)',
   scrollable: false,
-  contentType: 'text'
+  contentType: 'text',
+  iconSet: 'Ionicons'
 }
