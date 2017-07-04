@@ -103,7 +103,7 @@ AppRegistry.registerComponent('Example', () => Example);
 ```
 
 ## Example with iconSet
-![Icon set demonstations](http://i.imgur.com/pStbAPr.gif)
+![Icon set demonstations](http://i.imgur.com/A9gyPwi.gif)
 
 ```jsx
 /**
