@@ -21,6 +21,13 @@ interface TabsProps {
   barColor?: string
 
   /**
+   * Type of tab content ('text' or 'icon')
+   *
+   * Default is 'text'
+   */
+  contentType?: string
+
+  /**
    * Color of the text for the selected tab
    *
    * Default is #fff
@@ -52,6 +59,14 @@ interface TabsProps {
    * The titles for the individual tabs
    */
   items: string[]
+
+  /**
+   * IconSet from react-native-vector-icons
+   * Type: String or array of string
+   *
+   * Default is 'Ionicons'
+   */
+  iconSet: string[] | string
 
   /**
    * Handler that's emitted every time the user presses a tab.
