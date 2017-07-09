@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Animated, ScrollView } from 'react-native'
 import { Bar } from './styles'
 import TabTrack from './TabTrack'
@@ -29,8 +30,8 @@ export default class MaterialTabs extends React.Component<TabsProps, TabsState> 
   scrollView: ScrollView
   static defaultProps: TabsDefaultProps
   static propTypes = {
-    items: React.PropTypes.arrayOf(React.PropTypes.string).isRequired,
-    onChange: React.PropTypes.func.isRequired
+    items: PropTypes.arrayOf(PropTypes.string).isRequired,
+    onChange: PropTypes.func.isRequired
   }
 
   constructor(props: TabsProps) {
