@@ -61,4 +61,4 @@ interface TabsProps {
   onChange(index: number): void
 }
 
-export default class MaterialTabs extends React.Component<TabsProps, null> { }
+export default class MaterialTabs extends React.Component<TabsProps, null> {}

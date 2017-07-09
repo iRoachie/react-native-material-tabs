@@ -1,27 +1,28 @@
-import styled from 'styled-components/native'
-import {Platform} from 'react-native'
-import Button from '../Touchable'
-import values from '../values'
+// @flow
+
+import styled from 'styled-components/native';
+import { Platform } from 'react-native';
+import Button from '../Touchable';
+import values from '../../lib/values';
 
 export const TabBody = styled.View`
   height: ${values.barHeight}
   alignItems: center
   justifyContent: center
   paddingHorizontal: 12
-`
+`;
 
-interface TabButtonProps {
-  tabWidth: number
-  stretch: boolean
-}
+type TabButtonProps = {
+  tabWidth: number,
+};
 
 export const TabButton = styled(Button)`
   width: ${(props: TabButtonProps) => props.tabWidth}
-`
+`;
 
-interface TabTextProps {
-  color: string
-}
+type TabTextProps = {
+  color: string,
+};
 
 export const TabText = styled.Text`
   color: ${(props: TabTextProps) => props.color}
@@ -30,4 +31,4 @@ export const TabText = styled.Text`
   fontSize: 14
   textAlign: center
   minWidth: 100%
-`
+`;

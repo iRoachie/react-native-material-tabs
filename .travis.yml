@@ -1,12 +1,11 @@
 language: node_js
-
+cache: yarn
 node_js:
- - "7"
- - "6"
-
+  - 'stable'
+  
 install:
- - yarn install
+ - yarn
 
-script:
- - yarn lint
- - yarn build
+before_script:
+ - yarn run flow -- check
+ - yarn run lint
