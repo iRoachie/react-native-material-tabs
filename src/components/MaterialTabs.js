@@ -127,8 +127,8 @@ export default class MaterialTabs extends React.Component<
   selectTab() {
     Animated.spring(this.state.indicatorPosition, {
       toValue: this.getAnimateValues().indicatorPosition,
-      tension: 100,
-      friction: 10,
+      tension: 300,
+      friction: 20,
     }).start();
 
     this.scrollView.scrollTo({
