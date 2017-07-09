@@ -182,6 +182,6 @@ export default class MaterialTabs extends React.Component<
   }
 
   render() {
-    return this.props.items && this.renderContent();
+    return this.props.items ? this.renderContent() : null;
   }
 }
