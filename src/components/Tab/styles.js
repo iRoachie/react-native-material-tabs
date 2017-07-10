@@ -9,7 +9,7 @@ export const TabBody = styled.View`
   height: ${values.barHeight}
   alignItems: center
   justifyContent: center
-  paddingHorizontal: 12
+  paddingHorizontal: 12px
 `;
 
 type TabButtonProps = {

@@ -1,6 +1,6 @@
 {
   "name": "react-native-material-tabs",
-  "version": "3.0.1",
+  "version": "3.0.2-0",
   "description": "Material Design implementation of Tabs",
   "keywords": [
     "react",
@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "prop-types": "^15.5.10",
-    "styled-components": "^1.4.6"
+    "styled-components": "^2.1.1"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
