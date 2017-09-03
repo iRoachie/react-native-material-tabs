@@ -3,7 +3,7 @@
 // Definitions by: Kyle Roach <https://github.com/iRoachie>
 // TypeScript Version: 2.2.2
 
-import React from 'react'
+import * as React from 'react'
 
 interface TabsProps {
   /**
