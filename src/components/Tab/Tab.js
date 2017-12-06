@@ -27,9 +27,7 @@ const Tab = ({
   return (
     <TabButton onPress={onPress} tabWidth={tabWidth} stretch={stretch}>
       <TabBody>
-        <TabText color={color}>
-          {text.toUpperCase()}
-        </TabText>
+        <TabText color={color}>{text.toUpperCase()}</TabText>
       </TabBody>
     </TabButton>
   );

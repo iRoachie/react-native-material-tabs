@@ -16,14 +16,14 @@ type TouchableProps = {
 };
 
 const Touchable = (props: TouchableProps) =>
-  Platform.OS === 'ios'
-    ? <TouchableOpacity style={props.style} onPress={props.onPress}>
-        {props.children}
-      </TouchableOpacity>
-    : <TouchableNativeFeedback onPress={props.onPress}>
-        <View style={props.style}>
-          {props.children}
-        </View>
-      </TouchableNativeFeedback>;
+  Platform.OS === 'ios' ? (
+    <TouchableOpacity style={props.style} onPress={props.onPress}>
+      {props.children}
+    </TouchableOpacity>
+  ) : (
+    <TouchableNativeFeedback onPress={props.onPress}>
+      <View style={props.style}>{props.children}</View>
+    </TouchableNativeFeedback>
+  );
 
 export default Touchable;

@@ -149,7 +149,7 @@ export default class MaterialTabs extends React.Component<
           scrollEnabled={this.props.scrollable}
         >
           <TabTrack>
-            {this.props.items.map((item, idx) =>
+            {this.props.items.map((item, idx) => (
               <Tab
                 text={item}
                 key={item}
@@ -163,8 +163,8 @@ export default class MaterialTabs extends React.Component<
                     : this.state.barWidth * 0.4
                 }
                 inActiveTextColor={this.props.inactiveTextColor}
-              />,
-            )}
+              />
+            ))}
           </TabTrack>
 
           <Indicator
