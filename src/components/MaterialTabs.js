@@ -129,6 +129,7 @@ export default class MaterialTabs extends React.Component<
       toValue: this.getAnimateValues().indicatorPosition,
       tension: 300,
       friction: 20,
+      useNativeDriver: true,
     }).start();
 
     this.scrollView.scrollTo({
