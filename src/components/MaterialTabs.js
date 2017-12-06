@@ -7,16 +7,13 @@ import { Bar, TabTrack } from '../lib/styles';
 import Tab from './Tab';
 import Indicator from './Indicator';
 
-type DefaultProps = {
+type Props = {
   selectedIndex: number,
   barColor: string,
   activeTextColor: string,
   indicatorColor: string,
   inactiveTextColor: string,
   scrollable: boolean,
-};
-
-type Props = DefaultProps & {
   items: string[],
   onChange: (index: number) => void,
 };
@@ -27,11 +24,7 @@ type State = {
   indicatorPosition: Animated.Value,
 };
 
-export default class MaterialTabs extends React.Component<
-  DefaultProps,
-  Props,
-  State,
-> {
+export default class MaterialTabs extends React.Component<Props, State> {
   static propTypes = {
     selectedIndex: PropTypes.number,
     barColor: PropTypes.string,
@@ -129,6 +122,7 @@ export default class MaterialTabs extends React.Component<
       toValue: this.getAnimateValues().indicatorPosition,
       tension: 300,
       friction: 20,
+      useNativeDriver: true,
     }).start();
 
     this.scrollView.scrollTo({
@@ -149,7 +143,7 @@ export default class MaterialTabs extends React.Component<
           scrollEnabled={this.props.scrollable}
         >
           <TabTrack>
-            {this.props.items.map((item, idx) =>
+            {this.props.items.map((item, idx) => (
               <Tab
                 text={item}
                 key={item}
@@ -163,8 +157,8 @@ export default class MaterialTabs extends React.Component<
                     : this.state.barWidth * 0.4
                 }
                 inActiveTextColor={this.props.inactiveTextColor}
-              />,
-            )}
+              />
+            ))}
           </TabTrack>
 
           <Indicator

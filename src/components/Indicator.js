@@ -24,11 +24,12 @@ type IndicatorProps = {
   style?: ViewStyle,
 };
 
-const Indicator = (props: IndicatorProps) =>
+const Indicator = (props: IndicatorProps) => (
   <Bar
     color={props.color}
-    style={{ left: props.value }}
+    style={{ transform: [{ translateX: props.value }] }}
     tabWidth={props.tabWidth}
-  />;
+  />
+);
 
 export default Indicator;
