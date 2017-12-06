@@ -1,6 +1,6 @@
 // @flow
 
-import React from 'react';
+import * as React from 'react';
 import {
   Platform,
   View,
@@ -12,7 +12,7 @@ import {
 type TouchableProps = {
   style: ViewStyle,
   onPress: () => void,
-  children: React.Element<any>,
+  children: React.Node,
 };
 
 const Touchable = (props: TouchableProps) =>

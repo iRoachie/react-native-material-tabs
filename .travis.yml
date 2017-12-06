@@ -7,5 +7,5 @@ install:
  - yarn
 
 before_script:
- - yarn run flow -- check
+ - yarn run flow
  - yarn run lint
