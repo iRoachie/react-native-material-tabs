@@ -14,7 +14,8 @@
   "scripts": {
     "flow": "flow check",
     "lint": "eslint **/*.js",
-    "format": "eslint --fix **/*.js"
+    "format": "eslint --fix **/*.js",
+    "test": "jest"
   },
   "dependencies": {
     "prop-types": "^15.5.10",
@@ -22,6 +23,10 @@
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
+    "babel-jest": "21.2.0",
+    "babel-preset-react-native": "4.0.0",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
     "eslint": "^4.2.0",
     "eslint-config-prettier": "^2.3.0",
     "eslint-plugin-babel": "^4.1.1",
@@ -31,9 +36,12 @@
     "eslint-plugin-react": "^7.1.0",
     "eslint-plugin-react-native": "^2.3.2",
     "flow-bin": "^0.56.0",
+    "jest": "21.2.1",
     "prettier": "^1.9.1",
     "react": "16.0.0",
-    "react-native": "^0.51.0"
+    "react-dom": "^16.2.0",
+    "react-native": "^0.51.0",
+    "react-test-renderer": "^16.2.0"
   },
   "peerDependencies": {
     "react": "*",
@@ -46,5 +54,8 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/iRoachie/react-native-material-tabs.git"
+  },
+  "jest": {
+    "preset": "react-native"
   }
 }

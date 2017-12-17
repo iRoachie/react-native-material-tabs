@@ -6,6 +6,5 @@ node_js:
 install:
  - yarn
 
-before_script:
- - yarn run flow
- - yarn run lint
+script:
+ - yarn run flow && yarn run lint && yarn run test
