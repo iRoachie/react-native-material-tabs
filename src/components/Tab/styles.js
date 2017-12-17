@@ -6,10 +6,10 @@ import Button from '../Touchable';
 import values from '../../lib/values';
 
 export const TabBody = styled.View`
-  height: ${values.barHeight}
-  alignItems: center
-  justifyContent: center
-  paddingHorizontal: 12px
+  height: ${values.barHeight};
+  align-items: center;
+  justify-content: center;
+  padding-horizontal: 12px;
 `;
 
 type TabButtonProps = {
@@ -25,10 +25,10 @@ type TabTextProps = {
 };
 
 export const TabText = styled.Text`
-  color: ${(props: TabTextProps) => props.color}
-  fontWeight: ${Platform.OS === 'ios' ? 500 : 400}
-  fontFamily: ${Platform.OS === 'android' ? 'sans-serif-medium' : 'System'}
-  fontSize: 14
-  textAlign: center
-  minWidth: 100%
+  color: ${(props: TabTextProps) => props.color};
+  font-weight: ${Platform.OS === 'ios' ? 500 : 400};
+  font-family: ${Platform.OS === 'android' ? 'sans-serif-medium' : 'System'};
+  font-size: 14;
+  text-align: center;
+  min-width: 100%;
 `;

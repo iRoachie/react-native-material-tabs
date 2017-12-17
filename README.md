@@ -1,10 +1,21 @@
-# React Native Material Tabs
+<h2 align="center">React Native Material Tabs</h2>
 
-Material Design implementation of [Tabs](https://material.io/guidelines/components/tabs.html#tabs-types-of-tabs).
+<p align="center">Material Design implementation of <a href="https://material.io/guidelines/components/tabs.html#tabs-types-of-tabs">Tabs</a>
 
-[![Build Status](https://travis-ci.org/iRoachie/react-native-material-tabs.svg?branch=master)](https://travis-ci.org/iRoachie/react-native-material-tabs)
-[![npm version](https://badge.fury.io/js/react-native-material-tabs.svg)](https://badge.fury.io/js/react-native-material-tabs)
-[![npm downloads](https://img.shields.io/npm/dt/react-native-material-tabs.svg)](https://www.npmjs.com/package/react-native-material-tabs)
+<p align="center">
+  <a href="https://travis-ci.org/iRoachie/react-native-material-tabs">
+    <img alt="Travis" src="https://img.shields.io/travis/iRoachie/react-native-material-tabs.svg?style=flat-square">
+  </a>
+  <a href="https://www.npmjs.com/package/react-native-material-tabs">
+    <img alt="npm version" src="https://img.shields.io/npm/v/react-native-material-tabs.svg?style=flat-square">
+  </a>
+  <a href="https://www.npmjs.com/package/react-native-material-tabs">
+    <img alt="npm downloads" src="https://img.shields.io/npm/dm/react-native-material-tabs.svg?style=flat-square">
+  </a>
+   <a href="#badge">
+    <img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square">
+  </a>
+</p>
 
 ## Getting Started
 #### Step 1

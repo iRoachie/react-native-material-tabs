@@ -2,7 +2,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Animated, ScrollView } from 'react-native';
+import { Animated, ScrollView, View } from 'react-native';
 import { Bar, TabTrack } from '../lib/styles';
 import Tab from './Tab';
 import Indicator from './Indicator';
@@ -59,11 +59,21 @@ export default class MaterialTabs extends React.Component<Props, State> {
     );
   }
 
+  componentWillUpdate(nextProps: Props) {
+    // Recalculate views if the number of items change
+    if (nextProps.items.length !== this.props.items.length) {
+      this.bar.measure((_, b, width) => {
+        this.getTabWidth(width);
+      });
+    }
+  }
+
   componentDidUpdate() {
     this.selectTab();
   }
 
   scrollView: ScrollView;
+  bar: View;
 
   getAnimateValues() {
     const idx = this.props.selectedIndex;
@@ -133,6 +143,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
   renderContent() {
     return (
       <Bar
+        innerRef={ref => (this.bar = ref)}
         barColor={this.props.barColor}
         onLayout={event => this.getTabWidth(event.nativeEvent.layout.width)}
       >
