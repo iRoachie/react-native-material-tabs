@@ -8,13 +8,13 @@ type BarProps = {
 };
 
 const Bar = styled.View`
-  backgroundColor: ${(props: BarProps) => props.barColor}
-  height: ${values.barHeight}
+  background-color: ${(props: BarProps) => props.barColor};
+  height: ${values.barHeight};
 `;
 
 const TabTrack = styled.View`
-  flexDirection: row
-  height: 46
+  flex-direction: row;
+  height: 46;
 `;
 
 export { Bar, TabTrack };

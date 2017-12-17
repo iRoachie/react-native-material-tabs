@@ -11,11 +11,7 @@
       "jsx": true
     }
   },
-  "extends": [
-    "prettier",
-    "prettier/flowtype",
-    "prettier/react"
-  ],
+  "extends": ["prettier", "prettier/flowtype", "prettier/react"],
   "plugins": [
     "babel",
     "flowtype",
@@ -66,11 +62,9 @@
     "require-yield": "error",
     "use-isnan": "error",
     "valid-typeof": "error",
-
     "babel/new-cap": "off",
     "babel/object-curly-spacing": "off",
     "babel/arrow-parens": "off",
-
     "flowtype/boolean-style": ["error", "boolean"],
     "flowtype/define-flow-type": "error",
     "flowtype/no-dupe-keys": "error",
@@ -84,7 +78,6 @@
     "flowtype/type-id-match": "off",
     "flowtype/use-flow-type": "error",
     "flowtype/valid-syntax": "error",
-
     "import/no-unresolved": "error",
     "import/named": "error",
     "import/default": "off",
@@ -102,7 +95,6 @@
     "import/no-namespace": "off",
     "import/extensions": ["error", { "js": "never", "json": "always" }],
     "import/order": "off",
-
     "react/display-name": "off",
     "react/forbid-prop-types": "off",
     "react/no-danger": "error",
@@ -135,6 +127,9 @@
     "react/jsx-uses-vars": "error",
     "react-native/no-unused-styles": "error",
     "react-native/split-platform-components": "off",
-    "prettier/prettier": ["error", {"trailingComma": "all", "singleQuote": true}]
+    "prettier/prettier": [
+      "error",
+      { "trailingComma": "all", "singleQuote": true }
+    ]
   }
 }
