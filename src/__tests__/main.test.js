@@ -39,10 +39,14 @@ describe('Main', () => {
 
   it('should fire onChange event', () => {
     const wrapper = shallow(component);
-    const instance = wrapper.instance();
 
-    instance.props.onChange(1);
-    expect(onChange).toBeCalled();
+    wrapper
+      .find('Tab')
+      .at(1)
+      .props()
+      .onPress();
+
+    expect(onChange).toBeCalledWith(1);
   });
 
   it('should change tabs', () => {
