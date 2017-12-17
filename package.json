@@ -1,6 +1,6 @@
 {
   "name": "react-native-material-tabs",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "Material Design implementation of Tabs",
   "keywords": ["react", "react-native", "material-design", "tabs"],
   "main": "./src/index.js",
