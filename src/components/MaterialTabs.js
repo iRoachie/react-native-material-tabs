@@ -2,7 +2,8 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Animated, ScrollView, View } from 'react-native';
+import { Animated, ScrollView, View, Text } from 'react-native';
+import type { StyleObj } from '../lib/definitions';
 import { Bar, TabTrack } from '../lib/styles';
 import Tab from './Tab';
 import Indicator from './Indicator';
@@ -14,6 +15,7 @@ type Props = {
   indicatorColor: string,
   inactiveTextColor: string,
   scrollable: boolean,
+  textStyle: StyleObj,
   items: string[],
   onChange: (index: number) => void,
 };
@@ -32,6 +34,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
     indicatorColor: PropTypes.string,
     inactiveTextColor: PropTypes.string,
     scrollable: PropTypes.bool,
+    textStyle: Text.propTypes.style,
     items: PropTypes.arrayOf(PropTypes.string).isRequired,
     onChange: PropTypes.func.isRequired,
   };
@@ -43,6 +46,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
     indicatorColor: '#fff',
     inactiveTextColor: 'rgba(255, 255, 255, 0.7)',
     scrollable: false,
+    textStyle: null,
   };
 
   state = {
@@ -162,6 +166,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
                 onPress={() => this.props.onChange(idx)}
                 active={idx === this.props.selectedIndex}
                 activeTextColor={this.props.activeTextColor}
+                textStyle={this.props.textStyle}
                 tabWidth={
                   !this.props.scrollable
                     ? this.state.tabWidth
