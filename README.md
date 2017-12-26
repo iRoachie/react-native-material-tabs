@@ -12,13 +12,18 @@
   <a href="https://www.npmjs.com/package/react-native-material-tabs">
     <img alt="npm downloads" src="https://img.shields.io/npm/dm/react-native-material-tabs.svg?style=flat-square">
   </a>
-   <a href="#badge">
+   <a href="https://prettier.io">
     <img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square">
+  </a>
+   <a href="https://www.styled-components.com">
+    <img alt="style: styled-components" src="https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e&style=flat-square">
   </a>
 </p>
 
 ## Getting Started
+
 #### Step 1
+
 Install the dependency
 
 ```bash
@@ -30,7 +35,9 @@ Or if you use yarn
 ```bash
 yarn add react-native-material-tabs
 ```
+
 #### Step 2
+
 Start using the component
 
 ```jsx
@@ -39,24 +46,26 @@ import MaterialTabs from 'react-native-material-tabs';
 <MaterialTabs
   items={['One', 'Two', 'Three']}
   selectedIndex={this.state.selectedTab}
-  onChange={(index) => this.setState({selectedTab: index})}/>
+  onChange={index => this.setState({ selectedTab: index })}
+/>;
 ```
 
-
 ## Available Props
-| prop | default | type | description |
-| ---- | ---- | ----| ---- |
-| barColor | #13897b | string | Color of the tab bar |
-| indicatorColor | #fff | string | Color of the indicator |
-| activeTextColor | #fff | string | Color of the text for the selected tab |
-| inactiveTextColor | rgba(255, 255, 255, 0.7) | string | Color of the text for inactive tabs |
-| items | none | array(string) | The headers for the individual tabs |
-| selectedIndex | 0 | number | The index of currrent tab selected. Indexes are mapped to the items prop |
-| scrollable | false | boolean | Option between having fixed tabs or scrollable tabs
-| onChange | none | Function | Handler that's emitted every time the user presses a tab. You can use this to change the selected index  | 
 
+| prop              | default                  | type          | description                                                                                             |
+| ----------------- | ------------------------ | ------------- | ------------------------------------------------------------------------------------------------------- |
+| barColor          | #13897b                  | string        | Color of the tab bar                                                                                    |
+| indicatorColor    | #fff                     | string        | Color of the indicator                                                                                  |
+| activeTextColor   | #fff                     | string        | Color of the text for the selected tab                                                                  |
+| inactiveTextColor | rgba(255, 255, 255, 0.7) | string        | Color of the text for inactive tabs                                                                     |
+| items             | none                     | array(string) | The headers for the individual tabs                                                                     |
+| selectedIndex     | 0                        | number        | The index of currrent tab selected. Indexes are mapped to the items prop                                |
+| scrollable        | false                    | boolean       | Option between having fixed tabs or scrollable tabs                                                     |
+| textStyle         | null                     | object(style) | Text style for tab titles                                                                               |
+| onChange          | none                     | Function      | Handler that's emitted every time the user presses a tab. You can use this to change the selected index |
 
 ## Example
+
 ![Alt Text](http://i.imgur.com/GYuMgMB.gif)
 
 ```jsx
@@ -67,33 +76,29 @@ import MaterialTabs from 'react-native-material-tabs';
  */
 
 import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
-import MaterialTabs from 'react-native-material-tabs'
+import { AppRegistry, StyleSheet, Text, View } from 'react-native';
+import MaterialTabs from 'react-native-material-tabs';
 
 export default class Example extends Component {
   state = {
-    selectedTab: 0
-  }
+    selectedTab: 0,
+  };
 
   setTab(tab) {
-    this.setState({selectedTab: tab})
+    this.setState({ selectedTab: tab });
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <MaterialTabs 
+        <MaterialTabs
           items={['One', 'Two', 'Three', 'Four', 'Five']}
           selectedIndex={this.state.selectedTab}
           onChange={this.setTab.bind(this)}
           barColor="#1fbcd2"
           indicatorColor="#fffe94"
           activeTextColor="white"
+          textStyle={{ fontFamily: 'Papyrus' }}
         />
       </View>
     );
@@ -102,10 +107,9 @@ export default class Example extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
-  }
+    flex: 1,
+  },
 });
 
 AppRegistry.registerComponent('Example', () => Example);
-
 ```
