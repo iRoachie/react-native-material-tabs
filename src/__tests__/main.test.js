@@ -67,4 +67,28 @@ describe('Main', () => {
     expect(tabs.at(0).props().active).toBe(false);
     expect(tabs.at(1).props().active).toBe(true);
   });
+
+  it('should apply custom fontFamily to tab', () => {
+    const textComponent = (
+      <MaterialTabs
+        selectedIndex={0}
+        items={['Tab1', 'Tab2']}
+        onChange={onChange}
+        textStyle={{ fontFamily: 'Papyrus' }}
+      />
+    );
+
+    const wrapper = shallow(textComponent);
+    const tree = create(textComponent).toJSON();
+
+    const tab = wrapper
+      .find('Tab')
+      .at(0) // Tab
+      .dive() // TabButton
+      .children() // TabBody
+      .children(); // TabText
+
+    expect(tab.props().style).toEqual({ fontFamily: 'Papyrus' });
+    expect(tree).toMatchSnapshot();
+  });
 });

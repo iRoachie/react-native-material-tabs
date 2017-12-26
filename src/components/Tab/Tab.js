@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { TabText, TabBody, TabButton } from './styles';
+import type { StyleObj } from '../../lib/definitions';
 
 type TabProps = {
   text: string,
@@ -10,6 +11,7 @@ type TabProps = {
   activeTextColor: string,
   inActiveTextColor: string,
   active?: boolean,
+  textStyle: StyleObj,
   onPress?: () => void,
 };
 
@@ -21,13 +23,16 @@ const Tab = ({
   inActiveTextColor,
   tabWidth,
   stretch,
+  textStyle,
 }: TabProps) => {
   const color = active ? activeTextColor : inActiveTextColor;
 
   return (
     <TabButton onPress={onPress} tabWidth={tabWidth} stretch={stretch}>
       <TabBody>
-        <TabText color={color}>{text.toUpperCase()}</TabText>
+        <TabText color={color} style={textStyle}>
+          {text.toUpperCase()}
+        </TabText>
       </TabBody>
     </TabButton>
   );
