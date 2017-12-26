@@ -61,7 +61,7 @@ import MaterialTabs from 'react-native-material-tabs';
 | items             | none                     | array(string) | The headers for the individual tabs                                                                     |
 | selectedIndex     | 0                        | number        | The index of currrent tab selected. Indexes are mapped to the items prop                                |
 | scrollable        | false                    | boolean       | Option between having fixed tabs or scrollable tabs                                                     |
-| tabStyle          | null                     | object(style) | Text style for tab titles                                                                               |
+| textStyle         | null                     | object(style) | Text style for tab titles                                                                               |
 | onChange          | none                     | Function      | Handler that's emitted every time the user presses a tab. You can use this to change the selected index |
 
 ## Example
