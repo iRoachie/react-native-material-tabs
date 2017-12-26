@@ -12,8 +12,11 @@
   <a href="https://www.npmjs.com/package/react-native-material-tabs">
     <img alt="npm downloads" src="https://img.shields.io/npm/dm/react-native-material-tabs.svg?style=flat-square">
   </a>
-   <a href="#badge">
+   <a href="https://prettier.io">
     <img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square">
+  </a>
+   <a href="https://www.styled-components.com">
+    <img alt="style: styled-components" src="https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e&style=flat-square">
   </a>
 </p>
 
