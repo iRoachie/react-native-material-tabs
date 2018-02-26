@@ -170,6 +170,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
                 active={idx === this.props.selectedIndex}
                 activeTextColor={this.props.activeTextColor}
                 textStyle={this.props.textStyle}
+                tabHeight={this.props.barHeight}
                 tabWidth={
                   !this.props.scrollable
                     ? this.state.tabWidth

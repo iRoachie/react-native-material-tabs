@@ -3,10 +3,13 @@
 import styled from 'styled-components/native';
 import { Platform } from 'react-native';
 import Button from '../Touchable';
-import values from '../../lib/values';
+
+type TabBodyProps = {
+  tabHeight: number,
+};
 
 export const TabBody = styled.View`
-  height: ${values.barHeight};
+  height: ${(props: TabBodyProps) => props.tabHeight};
   align-items: center;
   justify-content: center;
   padding-horizontal: 12px;
