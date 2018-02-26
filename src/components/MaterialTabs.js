@@ -43,6 +43,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
   static defaultProps = {
     selectedIndex: 0,
     barColor: '#13897b',
+    barHeight: 48,
     activeTextColor: '#fff',
     indicatorColor: '#fff',
     inactiveTextColor: 'rgba(255, 255, 255, 0.7)',
