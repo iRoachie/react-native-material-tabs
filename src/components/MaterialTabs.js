@@ -11,6 +11,7 @@ import Indicator from './Indicator';
 type Props = {
   selectedIndex: number,
   barColor: string,
+  barHeight: number,
   activeTextColor: string,
   indicatorColor: string,
   inactiveTextColor: string,
@@ -149,6 +150,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
       <Bar
         innerRef={ref => (this.bar = ref)}
         barColor={this.props.barColor}
+        barHeight={this.props.barHeight}
         onLayout={event => this.getTabWidth(event.nativeEvent.layout.width)}
       >
         <ScrollView
@@ -157,7 +159,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
           showsHorizontalScrollIndicator={false}
           scrollEnabled={this.props.scrollable}
         >
-          <TabTrack>
+          <TabTrack barHeight={this.props.barHeight}>
             {this.props.items.map((item, idx) => (
               <Tab
                 text={item}
