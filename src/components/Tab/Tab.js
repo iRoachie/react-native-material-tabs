@@ -7,6 +7,7 @@ import type { StyleObj } from '../../lib/definitions';
 type TabProps = {
   text: string,
   tabWidth: number,
+  tabHeight: number,
   stretch: boolean,
   activeTextColor: string,
   inActiveTextColor: string,
@@ -22,6 +23,7 @@ const Tab = ({
   text,
   inActiveTextColor,
   tabWidth,
+  tabHeight,
   stretch,
   textStyle,
 }: TabProps) => {
@@ -29,7 +31,7 @@ const Tab = ({
 
   return (
     <TabButton onPress={onPress} tabWidth={tabWidth} stretch={stretch}>
-      <TabBody>
+      <TabBody tabHeight={tabHeight}>
         <TabText color={color} style={textStyle}>
           {text.toUpperCase()}
         </TabText>

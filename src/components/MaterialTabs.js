@@ -5,12 +5,14 @@ import PropTypes from 'prop-types';
 import { Animated, ScrollView, View, Text } from 'react-native';
 import type { StyleObj } from '../lib/definitions';
 import { Bar, TabTrack } from '../lib/styles';
+import values from '../lib/values';
 import Tab from './Tab';
 import Indicator from './Indicator';
 
 type Props = {
   selectedIndex: number,
   barColor: string,
+  barHeight: number,
   activeTextColor: string,
   indicatorColor: string,
   inactiveTextColor: string,
@@ -42,6 +44,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
   static defaultProps = {
     selectedIndex: 0,
     barColor: '#13897b',
+    barHeight: values.barHeight,
     activeTextColor: '#fff',
     indicatorColor: '#fff',
     inactiveTextColor: 'rgba(255, 255, 255, 0.7)',
@@ -149,6 +152,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
       <Bar
         innerRef={ref => (this.bar = ref)}
         barColor={this.props.barColor}
+        barHeight={this.props.barHeight}
         onLayout={event => this.getTabWidth(event.nativeEvent.layout.width)}
       >
         <ScrollView
@@ -157,7 +161,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
           showsHorizontalScrollIndicator={false}
           scrollEnabled={this.props.scrollable}
         >
-          <TabTrack>
+          <TabTrack barHeight={this.props.barHeight}>
             {this.props.items.map((item, idx) => (
               <Tab
                 text={item}
@@ -167,6 +171,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
                 active={idx === this.props.selectedIndex}
                 activeTextColor={this.props.activeTextColor}
                 textStyle={this.props.textStyle}
+                tabHeight={this.props.barHeight}
                 tabWidth={
                   !this.props.scrollable
                     ? this.state.tabWidth
