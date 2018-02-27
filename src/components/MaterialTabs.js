@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { Animated, ScrollView, View, Text } from 'react-native';
 import type { StyleObj } from '../lib/definitions';
 import { Bar, TabTrack } from '../lib/styles';
+import values from '../lib/values';
 import Tab from './Tab';
 import Indicator from './Indicator';
 
@@ -43,7 +44,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
   static defaultProps = {
     selectedIndex: 0,
     barColor: '#13897b',
-    barHeight: 48,
+    barHeight: values.barHeight,
     activeTextColor: '#fff',
     indicatorColor: '#fff',
     inactiveTextColor: 'rgba(255, 255, 255, 0.7)',
