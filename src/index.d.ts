@@ -22,6 +22,13 @@ interface TabsProps {
   barColor?: string;
 
   /**
+   * Height of the tab bar
+   *
+   * Default is 48
+   */
+  barHeight?: number;
+
+  /**
    * Color of the text for the selected tab
    *
    * Default is #fff
