@@ -13,6 +13,7 @@ type Props = {
   selectedIndex: number,
   barColor: string,
   barHeight: number,
+  barWidth: 0.4,
   activeTextColor: string,
   indicatorColor: string,
   inactiveTextColor: string,
@@ -35,6 +36,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
     activeTextColor: PropTypes.string,
     indicatorColor: PropTypes.string,
     inactiveTextColor: PropTypes.string,
+    barWidth:  PropTypes.number,
     scrollable: PropTypes.bool,
     textStyle: Text.propTypes.style,
     items: PropTypes.arrayOf(PropTypes.string).isRequired,
@@ -45,6 +47,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
     selectedIndex: 0,
     barColor: '#13897b',
     barHeight: values.barHeight,
+    barWidth:  0.4,
     activeTextColor: '#fff',
     indicatorColor: '#fff',
     inactiveTextColor: 'rgba(255, 255, 255, 0.7)',
@@ -86,7 +89,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
     const idx = this.props.selectedIndex;
     const scrollValue = !this.props.scrollable
       ? this.state.tabWidth
-      : this.state.barWidth * 0.4;
+      : this.state.barWidth * this.props.barWidth;
 
     // All props for fixed tabs are the same
     if (!this.props.scrollable) {
@@ -175,7 +178,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
                 tabWidth={
                   !this.props.scrollable
                     ? this.state.tabWidth
-                    : this.state.barWidth * 0.4
+                    : this.state.barWidth * this.props.barWidth
                 }
                 inActiveTextColor={this.props.inactiveTextColor}
               />
@@ -188,7 +191,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
             tabWidth={
               !this.props.scrollable
                 ? this.state.tabWidth
-                : this.state.barWidth * 0.4
+                : this.state.barWidth * this.props.barWidth
             }
           />
         </ScrollView>
