@@ -77,7 +77,7 @@ import MaterialTabs from 'react-native-material-tabs';
  */
 
 import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, Text, View } from 'react-native';
+import { AppRegistry, StyleSheet, Text, SafeAreaView } from 'react-native';
 import MaterialTabs from 'react-native-material-tabs';
 
 export default class Example extends Component {
@@ -91,7 +91,7 @@ export default class Example extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
         <MaterialTabs
           items={['One', 'Two', 'Three', 'Four', 'Five']}
           selectedIndex={this.state.selectedTab}
@@ -101,7 +101,7 @@ export default class Example extends Component {
           activeTextColor="white"
           textStyle={{ fontFamily: 'Papyrus' }}
         />
-      </View>
+      </SafeAreaView>
     );
   }
 }
