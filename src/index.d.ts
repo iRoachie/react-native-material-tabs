@@ -3,6 +3,13 @@ import { StyleProp, TextStyle } from 'react-native';
 
 interface TabsProps {
   /**
+   * Specifies whether fonts should scale to respect Text Size accessibility settings
+   *
+   * Default is true
+   */
+  allowFontScaling?: boolean;
+
+  /**
    * The index of current tab selected. Indexes are mapped to the items prop
    *
    * Default is 0

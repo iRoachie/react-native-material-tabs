@@ -10,6 +10,7 @@ import Tab from './Tab';
 import Indicator from './Indicator';
 
 type Props = {
+  allowFontScaling: boolean,
   selectedIndex: number,
   barColor: string,
   barHeight: number,
@@ -30,6 +31,7 @@ type State = {
 
 export default class MaterialTabs extends React.Component<Props, State> {
   static propTypes = {
+    allowFontScaling: PropTypes.bool,
     selectedIndex: PropTypes.number,
     barColor: PropTypes.string,
     activeTextColor: PropTypes.string,
@@ -42,6 +44,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
   };
 
   static defaultProps = {
+    allowFontScaling: true,
     selectedIndex: 0,
     barColor: '#13897b',
     barHeight: values.barHeight,
@@ -164,6 +167,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
           <TabTrack barHeight={this.props.barHeight}>
             {this.props.items.map((item, idx) => (
               <Tab
+                allowFontScaling={this.props.allowFontScaling}
                 text={item}
                 key={item}
                 stretch={!this.props.scrollable}
