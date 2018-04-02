@@ -1,8 +1,3 @@
-// Type definitions for react-native-material-tabs
-// Project: https://github.com/iRoachie/react-native-material-tabs
-// Definitions by: Kyle Roach <https://github.com/iRoachie>
-// TypeScript Version: 3.1
-
 import * as React from 'react';
 import { StyleProp, TextStyle } from 'react-native';
 
