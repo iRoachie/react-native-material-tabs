@@ -1,12 +1,14 @@
-// Type definitions for react-native-material-tabs
-// Project: https://github.com/iRoachie/react-native-material-tabs
-// Definitions by: Kyle Roach <https://github.com/iRoachie>
-// TypeScript Version: 3.1
-
 import * as React from 'react';
 import { StyleProp, TextStyle } from 'react-native';
 
 interface TabsProps {
+  /**
+   * Specifies whether fonts should scale to respect Text Size accessibility settings
+   *
+   * Default is true
+   */
+  allowFontScaling?: boolean;
+
   /**
    * The index of current tab selected. Indexes are mapped to the items prop
    *

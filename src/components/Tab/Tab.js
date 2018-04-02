@@ -5,6 +5,7 @@ import { TabText, TabBody, TabButton } from './styles';
 import type { StyleObj } from '../../lib/definitions';
 
 type TabProps = {
+  allowFontScaling: boolean,
   text: string,
   tabWidth: number,
   tabHeight: number,
@@ -17,6 +18,7 @@ type TabProps = {
 };
 
 const Tab = ({
+  allowFontScaling,
   activeTextColor,
   active,
   onPress,
@@ -32,7 +34,11 @@ const Tab = ({
   return (
     <TabButton onPress={onPress} tabWidth={tabWidth} stretch={stretch}>
       <TabBody tabHeight={tabHeight}>
-        <TabText color={color} style={textStyle}>
+        <TabText
+          color={color}
+          style={textStyle}
+          allowFontScaling={allowFontScaling}
+        >
           {text.toUpperCase()}
         </TabText>
       </TabBody>

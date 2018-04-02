@@ -63,6 +63,7 @@ import MaterialTabs from 'react-native-material-tabs';
 | scrollable        | false                    | boolean       | Option between having fixed tabs or scrollable tabs                                                     |
 | textStyle         | null                     | object(style) | Text style for tab titles                                                                               |
 | onChange          | none                     | Function      | Handler that's emitted every time the user presses a tab. You can use this to change the selected index |
+| allowFontScaling  | true                     | boolean       | Specifies whether fonts should scale to respect Text Size accessibility settings                        |
 
 ## Example
 
@@ -76,7 +77,7 @@ import MaterialTabs from 'react-native-material-tabs';
  */
 
 import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, Text, View } from 'react-native';
+import { AppRegistry, StyleSheet, Text, SafeAreaView } from 'react-native';
 import MaterialTabs from 'react-native-material-tabs';
 
 export default class Example extends Component {
@@ -90,7 +91,7 @@ export default class Example extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
         <MaterialTabs
           items={['One', 'Two', 'Three', 'Four', 'Five']}
           selectedIndex={this.state.selectedTab}
@@ -100,7 +101,7 @@ export default class Example extends Component {
           activeTextColor="white"
           textStyle={{ fontFamily: 'Papyrus' }}
         />
-      </View>
+      </SafeAreaView>
     );
   }
 }
