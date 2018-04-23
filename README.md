@@ -64,6 +64,7 @@ import MaterialTabs from 'react-native-material-tabs';
 | textStyle         | null                     | object(style) | Text style for tab titles                                                                               |
 | onChange          | none                     | Function      | Handler that's emitted every time the user presses a tab. You can use this to change the selected index |
 | allowFontScaling  | true                     | boolean       | Specifies whether fonts should scale to respect Text Size accessibility settings                        |
+| uppercase         | true                     | boolean       | Specifies whether to uppercase the tab labels                                                           |
 
 ## Example
 

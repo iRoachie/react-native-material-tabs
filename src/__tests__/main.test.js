@@ -91,4 +91,18 @@ describe('Main', () => {
     expect(tab.props().style).toEqual({ fontFamily: 'Papyrus' });
     expect(tree).toMatchSnapshot();
   });
+
+  it('should display tab labels not uppercased', () => {
+    const tabs = (
+      <MaterialTabs
+        selectedIndex={0}
+        items={['Tab1', 'Tab2']}
+        onChange={onChange}
+        uppercase={false}
+      />
+    );
+
+    const tree = create(tabs).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
