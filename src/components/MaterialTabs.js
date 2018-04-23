@@ -20,6 +20,7 @@ type Props = {
   scrollable: boolean,
   textStyle: StyleObj,
   items: string[],
+  uppercase: boolean,
   onChange: (index: number) => void,
 };
 
@@ -34,12 +35,14 @@ export default class MaterialTabs extends React.Component<Props, State> {
     allowFontScaling: PropTypes.bool,
     selectedIndex: PropTypes.number,
     barColor: PropTypes.string,
+    barHeight: PropTypes.number,
     activeTextColor: PropTypes.string,
     indicatorColor: PropTypes.string,
     inactiveTextColor: PropTypes.string,
     scrollable: PropTypes.bool,
     textStyle: Text.propTypes.style,
     items: PropTypes.arrayOf(PropTypes.string).isRequired,
+    uppercase: PropTypes.bool,
     onChange: PropTypes.func.isRequired,
   };
 
@@ -53,6 +56,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
     inactiveTextColor: 'rgba(255, 255, 255, 0.7)',
     scrollable: false,
     textStyle: null,
+    uppercase: true,
   };
 
   state = {
@@ -178,6 +182,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
                     ? this.state.tabWidth
                     : this.state.barWidth * 0.4
                 }
+                uppercase={this.props.uppercase}
                 inActiveTextColor={this.props.inactiveTextColor}
               />
             ))}

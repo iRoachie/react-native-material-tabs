@@ -69,6 +69,13 @@ interface TabsProps {
   textStyle?: StyleProp<TextStyle>;
 
   /**
+   * Make the titles uppercased
+   * 
+   * Default is true
+   */
+  uppercase?: boolean;
+
+  /**
    * Handler that's emitted every time the user presses a tab.
    * You can use this to change the selected index
    * @param index

@@ -188,6 +188,190 @@ exports[`Main should apply custom fontFamily to tab 1`] = `
 </View>
 `;
 
+exports[`Main should display tab labels not uppercased 1`] = `
+<View
+  barColor="#13897b"
+  barHeight={48}
+  onLayout={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#13897b",
+        "height": 48,
+      },
+      undefined,
+    ]
+  }
+>
+  <RCTScrollView
+    horizontal={true}
+    scrollEnabled={false}
+    showsHorizontalScrollIndicator={false}
+  >
+    <View>
+      <View
+        barHeight={48}
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+              "height": 46,
+            },
+            undefined,
+          ]
+        }
+      >
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          collapsable={undefined}
+          hasTVPreferredFocus={undefined}
+          hitSlop={undefined}
+          isTVSelectable={true}
+          nativeID={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+              "width": 0,
+            }
+          }
+          testID={undefined}
+          tvParallaxProperties={undefined}
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "height": 48,
+                  "justifyContent": "center",
+                  "paddingHorizontal": 12,
+                },
+                undefined,
+              ]
+            }
+            tabHeight={48}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              color="#fff"
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "#fff",
+                    "fontFamily": "System",
+                    "fontSize": 14,
+                    "fontWeight": "500",
+                    "minWidth": "100%",
+                    "textAlign": "center",
+                  },
+                  null,
+                ]
+              }
+            >
+              Tab1
+            </Text>
+          </View>
+        </View>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          collapsable={undefined}
+          hasTVPreferredFocus={undefined}
+          hitSlop={undefined}
+          isTVSelectable={true}
+          nativeID={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+              "width": 0,
+            }
+          }
+          testID={undefined}
+          tvParallaxProperties={undefined}
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "height": 48,
+                  "justifyContent": "center",
+                  "paddingHorizontal": 12,
+                },
+                undefined,
+              ]
+            }
+            tabHeight={48}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              color="rgba(255, 255, 255, 0.7)"
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(255, 255, 255, 0.7)",
+                    "fontFamily": "System",
+                    "fontSize": 14,
+                    "fontWeight": "500",
+                    "minWidth": "100%",
+                    "textAlign": "center",
+                  },
+                  null,
+                ]
+              }
+            >
+              Tab2
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        collapsable={undefined}
+        color="#fff"
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "bottom": 0,
+            "height": 2,
+            "position": "absolute",
+            "transform": Array [
+              Object {
+                "translateX": 0,
+              },
+            ],
+            "width": 0,
+          }
+        }
+        tabWidth={0}
+      />
+    </View>
+  </RCTScrollView>
+</View>
+`;
+
 exports[`Main should render without errors 1`] = `
 <View
   barColor="#13897b"

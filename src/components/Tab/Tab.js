@@ -14,6 +14,7 @@ type TabProps = {
   inActiveTextColor: string,
   active?: boolean,
   textStyle: StyleObj,
+  uppercase: boolean,
   onPress?: () => void,
 };
 
@@ -28,6 +29,7 @@ const Tab = ({
   tabHeight,
   stretch,
   textStyle,
+  uppercase,
 }: TabProps) => {
   const color = active ? activeTextColor : inActiveTextColor;
 
@@ -39,7 +41,7 @@ const Tab = ({
           style={textStyle}
           allowFontScaling={allowFontScaling}
         >
-          {text.toUpperCase()}
+          {uppercase ? text.toUpperCase() : text}
         </TabText>
       </TabBody>
     </TabButton>
