@@ -30,6 +30,8 @@ type State = {
   indicatorPosition: Animated.Value,
 };
 
+let firstLaunch = true;
+
 export default class MaterialTabs extends React.Component<Props, State> {
   static propTypes = {
     allowFontScaling: PropTypes.bool,
@@ -74,13 +76,19 @@ export default class MaterialTabs extends React.Component<Props, State> {
   }
 
   componentDidUpdate(prevProps: Props) {
-    if (this.props.items.length !== prevProps.items.length) {
+    const noAnimation = firstLaunch;
+
+    if (
+      this.props.items.length !== prevProps.items.length ||
+      (firstLaunch && this.props.scrollable)
+    ) {
       this.bar.measure((_, b, width) => {
         this.getTabWidth(width);
       });
     }
 
-    this.selectTab();
+    firstLaunch = false;
+    this.selectTab(noAnimation);
   }
 
   scrollView: ScrollView;
@@ -130,24 +138,35 @@ export default class MaterialTabs extends React.Component<Props, State> {
   }
 
   getTabWidth(width: number) {
+    let { tabWidth } = this.state;
+
     if (!this.props.scrollable) {
-      this.setState({ tabWidth: width / this.props.items.length });
+      tabWidth = width / this.props.items.length;
     }
+
     this.setState({
+      tabWidth,
       barWidth: width,
     });
   }
 
-  selectTab() {
-    Animated.spring(this.state.indicatorPosition, {
-      toValue: this.getAnimateValues().indicatorPosition,
-      tension: 300,
-      friction: 20,
-      useNativeDriver: true,
-    }).start();
+  selectTab(noAnimation?: boolean) {
+    const { indicatorPosition, scrollPosition } = this.getAnimateValues();
+
+    if (noAnimation) {
+      this.state.indicatorPosition.setValue(indicatorPosition);
+    } else {
+      Animated.spring(this.state.indicatorPosition, {
+        toValue: indicatorPosition,
+        tension: 300,
+        friction: 20,
+        useNativeDriver: true,
+      }).start();
+    }
 
     this.scrollView.scrollTo({
-      x: this.getAnimateValues().scrollPosition,
+      x: scrollPosition,
+      animated: !noAnimation,
     });
   }
 

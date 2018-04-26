@@ -10,10 +10,6 @@ let component;
 let onChange;
 
 describe('Main', () => {
-  beforeAll(() => {
-    console.warn = function() {};
-  });
-
   beforeEach(() => {
     onChange = jest.fn();
     component = (

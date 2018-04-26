@@ -1,7 +1,7 @@
 language: node_js
 cache: yarn
 node_js:
-  - 'stable'
+  - 9.11.1
   
 install:
  - yarn
