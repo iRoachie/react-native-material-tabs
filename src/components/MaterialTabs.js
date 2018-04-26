@@ -78,7 +78,10 @@ export default class MaterialTabs extends React.Component<Props, State> {
   componentDidUpdate(prevProps: Props) {
     const noAnimation = firstLaunch;
 
-    if (this.props.items.length !== prevProps.items.length || firstLaunch) {
+    if (
+      this.props.items.length !== prevProps.items.length ||
+      (firstLaunch && this.props.scrollable)
+    ) {
       this.bar.measure((_, b, width) => {
         this.getTabWidth(width);
         firstLaunch = false;
