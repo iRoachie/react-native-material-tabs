@@ -84,10 +84,10 @@ export default class MaterialTabs extends React.Component<Props, State> {
     ) {
       this.bar.measure((_, b, width) => {
         this.getTabWidth(width);
-        firstLaunch = false;
       });
     }
 
+    firstLaunch = false;
     this.selectTab(noAnimation);
   }
 
