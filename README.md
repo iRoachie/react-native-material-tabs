@@ -72,24 +72,18 @@ import MaterialTabs from 'react-native-material-tabs';
 ![Alt Text](http://i.imgur.com/GYuMgMB.gif)
 
 ```jsx
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
-import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, Text, SafeAreaView } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, SafeAreaView } from 'react-native';
 import MaterialTabs from 'react-native-material-tabs';
 
-export default class Example extends Component {
+export default class Example extends React.Component {
   state = {
     selectedTab: 0,
   };
 
-  setTab(tab) {
-    this.setState({ selectedTab: tab });
-  }
+  setTab = selectedTab => {
+    this.setState({ selectedTab });
+  };
 
   render() {
     return (
@@ -97,11 +91,10 @@ export default class Example extends Component {
         <MaterialTabs
           items={['One', 'Two', 'Three', 'Four', 'Five']}
           selectedIndex={this.state.selectedTab}
-          onChange={this.setTab.bind(this)}
+          onChange={this.setTab}
           barColor="#1fbcd2"
           indicatorColor="#fffe94"
           activeTextColor="white"
-          textStyle={{ fontFamily: 'Papyrus' }}
         />
       </SafeAreaView>
     );
@@ -113,6 +106,4 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
-
-AppRegistry.registerComponent('Example', () => Example);
 ```
