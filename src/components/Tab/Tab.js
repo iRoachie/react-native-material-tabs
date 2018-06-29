@@ -15,6 +15,7 @@ type TabProps = {
   active?: boolean,
   textStyle: StyleObj,
   uppercase: boolean,
+  activeTabStyle?: StyleObj,
   onPress?: () => void,
 };
 
@@ -30,12 +31,13 @@ const Tab = ({
   stretch,
   textStyle,
   uppercase,
+  activeTabStyle,
 }: TabProps) => {
   const color = active ? activeTextColor : inActiveTextColor;
 
   return (
     <TabButton onPress={onPress} tabWidth={tabWidth} stretch={stretch}>
-      <TabBody tabHeight={tabHeight}>
+      <TabBody tabHeight={tabHeight} style={activeTabStyle}>
         <TabText
           color={color}
           style={textStyle}

@@ -70,10 +70,15 @@ interface TabsProps {
 
   /**
    * Make the titles uppercased
-   * 
+   *
    * Default is true
    */
   uppercase?: boolean;
+
+  /**
+   * Optional view style for the active tab
+   */
+  activeTabStyle?: StyleProp<ViewStyle>;
 
   /**
    * Handler that's emitted every time the user presses a tab.
