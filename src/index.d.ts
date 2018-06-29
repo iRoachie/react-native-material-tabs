@@ -78,12 +78,12 @@ interface TabsProps {
   /**
    * Optional view style for the selected tab
    */
-  selectedTabStyle?: StyleProp<ViewStyle>;
+  activeTabStyle?: StyleProp<ViewStyle>;
 
   /**
    * Optional text style fot selected tab
    */
-  selectedTextStyle?: StyleProp<TextStyle>;
+  activeTextStyle?: StyleProp<TextStyle>;
 
   /**
    * Handler that's emitted every time the user presses a tab.
