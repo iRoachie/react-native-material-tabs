@@ -2,7 +2,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Animated, ScrollView, View, Text, ViewPropTypes } from 'react-native';
+import { Animated, ScrollView, View, Text } from 'react-native';
 import type { StyleObj } from '../lib/definitions';
 import { Bar, TabTrack } from '../lib/styles';
 import values from '../lib/values';
@@ -19,10 +19,9 @@ type Props = {
   inactiveTextColor: string,
   scrollable: boolean,
   textStyle: StyleObj,
+  activeTextStyle: StyleObj,
   items: string[],
   uppercase: boolean,
-  activeTabStyle: StyleObj,
-  activeTextStyle: StyleObj,
   onChange: (index: number) => void,
 };
 
@@ -43,11 +42,10 @@ export default class MaterialTabs extends React.Component<Props, State> {
     inactiveTextColor: PropTypes.string,
     scrollable: PropTypes.bool,
     textStyle: Text.propTypes.style,
+    activeTextStyle: Text.propTypes.style,
     items: PropTypes.arrayOf(PropTypes.string).isRequired,
     uppercase: PropTypes.bool,
     onChange: PropTypes.func.isRequired,
-    activeTabStyle: ViewPropTypes.style,
-    activeTextStyle: Text.propTypes.style,
   };
 
   static defaultProps = {
@@ -61,7 +59,6 @@ export default class MaterialTabs extends React.Component<Props, State> {
     scrollable: false,
     textStyle: null,
     uppercase: true,
-    activeTabStyle: {},
     activeTextStyle: {},
   };
 
@@ -181,17 +178,12 @@ export default class MaterialTabs extends React.Component<Props, State> {
                 onPress={() => this.props.onChange(idx)}
                 active={idx === this.props.selectedIndex}
                 activeTextColor={this.props.activeTextColor}
-                activeTabStyle={
-                  this.props.selectedIndex === idx
-                    ? this.props.activeTabStyle
-                    : {}
-                }
+                textStyle={this.props.textStyle}
                 activeTextStyle={
                   this.props.selectedIndex === idx
                     ? this.props.activeTextStyle
                     : {}
                 }
-                textStyle={this.props.textStyle}
                 tabHeight={this.props.barHeight}
                 tabWidth={
                   !this.props.scrollable

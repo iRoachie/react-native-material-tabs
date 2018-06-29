@@ -76,11 +76,6 @@ interface TabsProps {
   uppercase?: boolean;
 
   /**
-   * Optional view style for the selected tab
-   */
-  activeTabStyle?: StyleProp<ViewStyle>;
-
-  /**
    * Optional text style fot selected tab
    */
   activeTextStyle?: StyleProp<TextStyle>;

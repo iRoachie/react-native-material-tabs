@@ -92,29 +92,6 @@ describe('Main', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should apply custom activeTabStyle to active tab', () => {
-    const textComponent = (
-      <MaterialTabs
-        selectedIndex={0}
-        items={['Tab1', 'Tab2']}
-        onChange={onChange}
-        activeTabStyle={{ backgroundColor: 'red' }}
-      />
-    );
-
-    const wrapper = shallow(textComponent);
-    const tree = create(textComponent).toJSON();
-
-    const tab = wrapper
-      .find('Tab')
-      .at(0) // Tab
-      .dive() // TabButton
-      .children(); // TabBody
-
-    expect(tab.props().style).toEqual({ backgroundColor: 'red' });
-    expect(tree).toMatchSnapshot();
-  });
-
   it('should apply custom activeTextStyle to active tab', () => {
     const textComponent = (
       <MaterialTabs
