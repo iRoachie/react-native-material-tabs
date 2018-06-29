@@ -16,8 +16,8 @@ type TabProps = {
   active?: boolean,
   textStyle: StyleObj,
   uppercase: boolean,
-  activeTabStyle?: StyleObj,
-  activeTextStyle?: StyleObj,
+  selectedTabStyle?: StyleObj,
+  selectedTextStyle?: StyleObj,
   onPress?: () => void,
 };
 
@@ -33,17 +33,17 @@ const Tab = ({
   stretch,
   textStyle,
   uppercase,
-  activeTabStyle,
-  activeTextStyle,
+  selectedTabStyle,
+  selectedTextStyle,
 }: TabProps) => {
   const color = active ? activeTextColor : inActiveTextColor;
 
   return (
     <TabButton onPress={onPress} tabWidth={tabWidth} stretch={stretch}>
-      <TabBody tabHeight={tabHeight} style={activeTabStyle}>
+      <TabBody tabHeight={tabHeight} style={selectedTabStyle}>
         <TabText
           color={color}
-          style={StyleSheet.flatten([textStyle, activeTextStyle])}
+          style={StyleSheet.flatten([textStyle, selectedTextStyle])}
           allowFontScaling={allowFontScaling}
         >
           {uppercase ? text.toUpperCase() : text}

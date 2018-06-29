@@ -76,14 +76,14 @@ interface TabsProps {
   uppercase?: boolean;
 
   /**
-   * Optional view style for the active tab
+   * Optional view style for the selected tab
    */
-  activeTabStyle?: StyleProp<ViewStyle>;
+  selectedTabStyle?: StyleProp<ViewStyle>;
 
   /**
-   * Optional text style fot active tab
+   * Optional text style fot selected tab
    */
-  activeTextStyle?: StyleProp<TextStyle>;
+  selectedTextStyle?: StyleProp<TextStyle>;
 
   /**
    * Handler that's emitted every time the user presses a tab.

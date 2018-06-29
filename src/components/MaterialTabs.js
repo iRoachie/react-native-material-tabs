@@ -21,8 +21,8 @@ type Props = {
   textStyle: StyleObj,
   items: string[],
   uppercase: boolean,
-  activeTabStyle: StyleObj,
-  activeTextStyle: StyleObj,
+  selectedTabStyle: StyleObj,
+  selectedTextStyle: StyleObj,
   onChange: (index: number) => void,
 };
 
@@ -46,8 +46,8 @@ export default class MaterialTabs extends React.Component<Props, State> {
     items: PropTypes.arrayOf(PropTypes.string).isRequired,
     uppercase: PropTypes.bool,
     onChange: PropTypes.func.isRequired,
-    activeTabStyle: ViewPropTypes.style,
-    activeTextStyle: Text.propTypes.style,
+    selectedTabStyle: ViewPropTypes.style,
+    selectedTextStyle: Text.propTypes.style,
   };
 
   static defaultProps = {
@@ -61,8 +61,8 @@ export default class MaterialTabs extends React.Component<Props, State> {
     scrollable: false,
     textStyle: null,
     uppercase: true,
-    activeTabStyle: {},
-    activeTextStyle: {},
+    selectedTabStyle: {},
+    selectedTextStyle: {},
   };
 
   state = {
@@ -183,12 +183,12 @@ export default class MaterialTabs extends React.Component<Props, State> {
                 activeTextColor={this.props.activeTextColor}
                 activeTabStyle={
                   this.props.selectedIndex === idx
-                    ? this.props.activeTabStyle
+                    ? this.props.selectedTabStyle
                     : {}
                 }
                 activeTextStyle={
                   this.props.selectedIndex === idx
-                    ? this.props.activeTextStyle
+                    ? this.props.selectedTextStyle
                     : {}
                 }
                 textStyle={this.props.textStyle}

@@ -7,7 +7,6 @@ import type { StyleObj } from '../../lib/definitions';
 
 type TabBodyProps = {
   tabHeight: number,
-  activeTabStyle: StyleObj,
 };
 
 export const TabBody = styled.View`
