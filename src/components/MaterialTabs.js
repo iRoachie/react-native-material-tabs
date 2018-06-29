@@ -22,6 +22,7 @@ type Props = {
   items: string[],
   uppercase: boolean,
   activeTabStyle: StyleObj,
+  activeTextStyle: StyleObj,
   onChange: (index: number) => void,
 };
 
@@ -46,6 +47,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
     uppercase: PropTypes.bool,
     onChange: PropTypes.func.isRequired,
     activeTabStyle: ViewPropTypes.style,
+    activeTextStyle: Text.propTypes.style,
   };
 
   static defaultProps = {
@@ -60,6 +62,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
     textStyle: null,
     uppercase: true,
     activeTabStyle: {},
+    activeTextStyle: {},
   };
 
   state = {
@@ -181,6 +184,11 @@ export default class MaterialTabs extends React.Component<Props, State> {
                 activeTabStyle={
                   this.props.selectedIndex === idx
                     ? this.props.activeTabStyle
+                    : {}
+                }
+                activeTextStyle={
+                  this.props.selectedIndex === idx
+                    ? this.props.activeTextStyle
                     : {}
                 }
                 textStyle={this.props.textStyle}

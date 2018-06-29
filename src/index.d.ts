@@ -81,6 +81,11 @@ interface TabsProps {
   activeTabStyle?: StyleProp<ViewStyle>;
 
   /**
+   * Optional text style fot active tab
+   */
+  activeTextStyle?: StyleProp<TextStyle>;
+
+  /**
    * Handler that's emitted every time the user presses a tab.
    * You can use this to change the selected index
    * @param index
