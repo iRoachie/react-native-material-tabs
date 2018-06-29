@@ -68,7 +68,7 @@ exports[`Main should apply custom fontFamily to tab 1`] = `
                   "justifyContent": "center",
                   "paddingHorizontal": 12,
                 },
-                undefined,
+                Object {},
               ]
             }
             tabHeight={48}
@@ -133,7 +133,7 @@ exports[`Main should apply custom fontFamily to tab 1`] = `
                   "justifyContent": "center",
                   "paddingHorizontal": 12,
                 },
-                undefined,
+                Object {},
               ]
             }
             tabHeight={48}
@@ -256,7 +256,7 @@ exports[`Main should display tab labels not uppercased 1`] = `
                   "justifyContent": "center",
                   "paddingHorizontal": 12,
                 },
-                undefined,
+                Object {},
               ]
             }
             tabHeight={48}
@@ -319,7 +319,7 @@ exports[`Main should display tab labels not uppercased 1`] = `
                   "justifyContent": "center",
                   "paddingHorizontal": 12,
                 },
-                undefined,
+                Object {},
               ]
             }
             tabHeight={48}
@@ -440,7 +440,7 @@ exports[`Main should render without errors 1`] = `
                   "justifyContent": "center",
                   "paddingHorizontal": 12,
                 },
-                undefined,
+                Object {},
               ]
             }
             tabHeight={48}
@@ -503,7 +503,7 @@ exports[`Main should render without errors 1`] = `
                   "justifyContent": "center",
                   "paddingHorizontal": 12,
                 },
-                undefined,
+                Object {},
               ]
             }
             tabHeight={48}
