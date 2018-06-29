@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import { StyleSheet } from 'react-native';
 import { TabText, TabBody, TabButton } from './styles';
 import type { StyleObj } from '../../lib/definitions';
 
@@ -15,6 +16,7 @@ type TabProps = {
   active?: boolean,
   textStyle: StyleObj,
   uppercase: boolean,
+  activeTextStyle?: StyleObj,
   onPress?: () => void,
 };
 
@@ -30,6 +32,7 @@ const Tab = ({
   stretch,
   textStyle,
   uppercase,
+  activeTextStyle,
 }: TabProps) => {
   const color = active ? activeTextColor : inActiveTextColor;
 
@@ -38,7 +41,7 @@ const Tab = ({
       <TabBody tabHeight={tabHeight}>
         <TabText
           color={color}
-          style={textStyle}
+          style={StyleSheet.flatten([textStyle, activeTextStyle])}
           allowFontScaling={allowFontScaling}
         >
           {uppercase ? text.toUpperCase() : text}
