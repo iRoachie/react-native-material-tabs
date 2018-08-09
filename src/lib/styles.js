@@ -1,6 +1,6 @@
 // @flow
 
-import styled from 'styled-components/native';
+import styled from 'styled-components';
 
 type BarProps = {
   barColor: string,
@@ -9,7 +9,7 @@ type BarProps = {
 
 type TabProps = {
   barHeight: number,
-}
+};
 
 const Bar = styled.View`
   background-color: ${(props: BarProps) => props.barColor};

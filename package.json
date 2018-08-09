@@ -2,10 +2,17 @@
   "name": "react-native-material-tabs",
   "version": "3.6.0",
   "description": "Material Design implementation of Tabs",
-  "keywords": ["react", "react-native", "material-design", "tabs"],
+  "keywords": [
+    "react",
+    "react-native",
+    "material-design",
+    "tabs"
+  ],
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
-  "files": ["src"],
+  "files": [
+    "src"
+  ],
   "author": {
     "name": "Kyle Roach",
     "email": "kroach.work@gmail.com"
@@ -19,7 +26,7 @@
   },
   "dependencies": {
     "prop-types": "^15.5.10",
-    "styled-components": "^2.3.0"
+    "styled-components": "^3.4.2"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
@@ -56,6 +63,9 @@
     "url": "git+https://github.com/iRoachie/react-native-material-tabs.git"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "moduleNameMapper": {
+      "styled-components": "<rootDir>/node_modules/styled-components/dist/styled-components.native.cjs.js"
+    }
   }
 }

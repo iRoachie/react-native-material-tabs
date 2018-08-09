@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Animated, ViewStyle } from 'react-native';
-import styled from 'styled-components/native';
+import styled from 'styled-components';
 
 type BarProps = {
   tabWidth: number,
