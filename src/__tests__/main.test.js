@@ -1,4 +1,5 @@
 import React from 'react';
+import { Text } from 'react-native';
 import Adapter from 'enzyme-adapter-react-16';
 import { create } from 'react-test-renderer';
 import { shallow, configure } from 'enzyme';
@@ -128,5 +129,22 @@ describe('Main', () => {
 
     const tree = create(tabs).toJSON();
     expect(tree).toMatchSnapshot();
+  });
+
+  describe('when items is an array of react elements', function () {
+    it('should render tabs', function () {
+      const tabs = (
+        <MaterialTabs
+          selectedIndex={0}
+          items={[
+            <Text>Tab1</Text>,
+            <Text>Tab2</Text>
+          ]}
+          onChange={onChange}
+        />
+      );
+      const tree = create(tabs).toJSON();
+      expect(tree).toMatchSnapshot();
+    });
   });
 });

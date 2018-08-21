@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components | Tab when content is react element renders content 1`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  collapsable={undefined}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+      "width": 100,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "height": 100,
+          "justifyContent": "center",
+          "paddingHorizontal": 12,
+        },
+        undefined,
+      ]
+    }
+    tabHeight={100}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+    >
+      hi
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Components | Tab when content is string renders text tab 1`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  collapsable={undefined}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+      "width": 100,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "height": 100,
+          "justifyContent": "center",
+          "paddingHorizontal": 12,
+        },
+        undefined,
+      ]
+    }
+    tabHeight={100}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      color="green"
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "green",
+            "fontFamily": "System",
+            "fontSize": 14,
+            "fontWeight": "500",
+            "minWidth": "100%",
+            "textAlign": "center",
+          },
+          Object {},
+        ]
+      }
+    >
+      TEXT
+    </Text>
+  </View>
+</View>
+`;

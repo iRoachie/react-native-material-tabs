@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { StyleProp, TextStyle } from 'react-native';
+import type { ContentType } from './components/Tab/Tab';
 
 interface TabsProps {
   /**
@@ -59,9 +60,9 @@ interface TabsProps {
   scrollable?: boolean;
 
   /**
-   * The titles for the individual tabs
+   * The titles or elements for the individual tabs
    */
-  items: string[];
+  items: ContentType[];
 
   /**
    * Optional text style to pass to tab titles

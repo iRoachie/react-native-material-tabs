@@ -8,6 +8,7 @@ import { Bar, TabTrack } from '../lib/styles';
 import values from '../lib/values';
 import Tab from './Tab';
 import Indicator from './Indicator';
+import type { ContentType } from './Tab/Tab';
 
 type Props = {
   allowFontScaling: boolean,
@@ -20,7 +21,7 @@ type Props = {
   scrollable: boolean,
   textStyle: StyleObj,
   activeTextStyle: StyleObj,
-  items: string[],
+  items: ContentType[],
   uppercase: boolean,
   onChange: (index: number) => void,
 };
@@ -43,7 +44,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
     scrollable: PropTypes.bool,
     textStyle: Text.propTypes.style,
     activeTextStyle: Text.propTypes.style,
-    items: PropTypes.arrayOf(PropTypes.string).isRequired,
+    items: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.element])).isRequired,
     uppercase: PropTypes.bool,
     onChange: PropTypes.func.isRequired,
   };
@@ -172,8 +173,8 @@ export default class MaterialTabs extends React.Component<Props, State> {
             {this.props.items.map((item, idx) => (
               <Tab
                 allowFontScaling={this.props.allowFontScaling}
-                text={item}
-                key={item}
+                content={item}
+                key={idx}
                 stretch={!this.props.scrollable}
                 onPress={() => this.props.onChange(idx)}
                 active={idx === this.props.selectedIndex}
