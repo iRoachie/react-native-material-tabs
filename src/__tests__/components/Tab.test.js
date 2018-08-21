@@ -2,7 +2,7 @@ import React from 'react';
 import Adapter from 'enzyme-adapter-react-16';
 import { create } from 'react-test-renderer';
 import { configure } from 'enzyme';
-import Tab from '../../components/tab';
+import Tab from '../../components/Tab';
 import { Text } from 'react-native';
 
 configure({ adapter: new Adapter() });
