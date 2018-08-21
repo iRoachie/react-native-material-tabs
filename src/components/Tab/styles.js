@@ -3,7 +3,6 @@
 import styled from 'styled-components';
 import { Platform } from 'react-native';
 import Button from '../Touchable';
-import type { StyleObj } from '../../lib/definitions';
 
 type TabBodyProps = {
   tabHeight: number,
@@ -27,11 +26,6 @@ export const TabButton = styled(Button)`
 type TabTextProps = {
   color: string,
 };
-
-export const IconStyle = {
-  fontSize: 28,
-  height: 30
-}
 
 export const TabText = styled.Text`
   color: ${(props: TabTextProps) => props.color};

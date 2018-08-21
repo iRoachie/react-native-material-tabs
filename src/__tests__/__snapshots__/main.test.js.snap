@@ -819,6 +819,14 @@ exports[`Main when items is an array of react elements should render tabs 1`] = 
               accessible={true}
               allowFontScaling={true}
               ellipsizeMode="tail"
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "color": "#fff",
+                  },
+                ]
+              }
             >
               Tab1
             </Text>
@@ -868,6 +876,14 @@ exports[`Main when items is an array of react elements should render tabs 1`] = 
               accessible={true}
               allowFontScaling={true}
               ellipsizeMode="tail"
+              style={
+                Array [
+                  undefined,
+                  Object {
+                    "color": "rgba(255, 255, 255, 0.7)",
+                  },
+                ]
+              }
             >
               Tab2
             </Text>

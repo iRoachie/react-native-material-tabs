@@ -45,6 +45,14 @@ exports[`Components | Tab when content is react element renders content 1`] = `
       accessible={true}
       allowFontScaling={true}
       ellipsizeMode="tail"
+      style={
+        Array [
+          undefined,
+          Object {
+            "color": "green",
+          },
+        ]
+      }
     >
       hi
     </Text>

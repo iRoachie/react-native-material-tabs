@@ -3,7 +3,7 @@
 import React from 'react';
 import type { Element } from 'react';
 import { StyleSheet } from 'react-native';
-import { TabText, TabBody, TabButton, IconStyle } from './styles';
+import { TabText, TabBody, TabButton } from './styles';
 import type { StyleObj } from '../../lib/definitions';
 
 export type ContentType = string | Element<*>;
@@ -35,7 +35,7 @@ const Tab = ({
   stretch,
   textStyle,
   uppercase,
-  activeTextStyle
+  activeTextStyle,
 }: TabProps) => {
   const color = active ? activeTextColor : inActiveTextColor;
   return (
