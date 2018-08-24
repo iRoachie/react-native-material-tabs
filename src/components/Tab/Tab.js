@@ -44,7 +44,7 @@ const Tab = ({
           style={StyleSheet.flatten([textStyle, activeTextStyle])}
           allowFontScaling={allowFontScaling}
         >
-          {uppercase ? text.toUpperCase() : text}
+          {(typeof(text) === "string" && uppercase) ? text.toUpperCase() : text}
         </TabText>
       </TabBody>
     </TabButton>
