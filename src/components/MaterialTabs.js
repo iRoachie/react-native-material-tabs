@@ -23,6 +23,7 @@ type Props = {
   items: string[],
   uppercase: boolean,
   onChange: (index: number) => void,
+  keyboardShouldPersistTaps: string | boolean,
 };
 
 type State = {
@@ -46,6 +47,9 @@ export default class MaterialTabs extends React.Component<Props, State> {
     items: PropTypes.arrayOf(PropTypes.string).isRequired,
     uppercase: PropTypes.bool,
     onChange: PropTypes.func.isRequired,
+    keyboardShouldPersistTaps: PropTypes.oneOfType([
+      PropTypes.string, PropTypes.bool
+    ]),
   };
 
   static defaultProps = {
@@ -60,6 +64,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
     textStyle: null,
     uppercase: true,
     activeTextStyle: {},
+    keyboardShouldPersistTaps: 'never',
   };
 
   state = {
@@ -166,6 +171,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
           horizontal
           ref={ref => (this.scrollView = ref)}
           showsHorizontalScrollIndicator={false}
+          keyboardShouldPersistTaps={this.props.keyboardShouldPersistTaps}
           scrollEnabled={this.props.scrollable}
         >
           <TabTrack barHeight={this.props.barHeight}>
