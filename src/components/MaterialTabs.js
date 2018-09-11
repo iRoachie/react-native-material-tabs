@@ -23,7 +23,7 @@ type Props = {
   items: string[],
   uppercase: boolean,
   onChange: (index: number) => void,
-  keyboardShouldPersistTaps: string | boolean,
+  keyboardShouldPersistTaps: string,
 };
 
 type State = {
@@ -47,9 +47,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
     items: PropTypes.arrayOf(PropTypes.string).isRequired,
     uppercase: PropTypes.bool,
     onChange: PropTypes.func.isRequired,
-    keyboardShouldPersistTaps: PropTypes.oneOfType([
-      PropTypes.string, PropTypes.bool
-    ]),
+    keyboardShouldPersistTaps: PropTypes.string,
   };
 
   static defaultProps = {
