@@ -92,7 +92,7 @@ interface TabsProps {
    * See: https://facebook.github.io/react-native/docs/scrollview#keyboardshouldpersisttaps
    * Default 'none'.
    */
-  keyboardShouldPersistTaps?: string;
+  keyboardShouldPersistTaps?: "always" | "never" | "handled";
 }
 
 export default class MaterialTabs extends React.Component<TabsProps> {}
