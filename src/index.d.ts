@@ -86,6 +86,13 @@ interface TabsProps {
    * @param index
    */
   onChange(index: number): void;
+
+  /**
+   * Optional keyboard tap behaviour for the ScrollView.
+   * See: https://facebook.github.io/react-native/docs/scrollview#keyboardshouldpersisttaps
+   * Default 'none'.
+   */
+  keyboardShouldPersistTaps?: "always" | "never" | "handled";
 }
 
 export default class MaterialTabs extends React.Component<TabsProps> {}
