@@ -1,6 +1,6 @@
 {
   "name": "react-native-material-tabs",
-  "version": "3.6.2",
+  "version": "3.7.0",
   "description": "Material Design implementation of Tabs",
   "keywords": [
     "react",
@@ -22,7 +22,7 @@
     "flow": "flow check",
     "lint": "eslint **/*.js",
     "format": "eslint --fix **/*.js",
-    "test": "jest"
+    "test": "jest --runInBand"
   },
   "dependencies": {
     "prop-types": "^15.5.10",

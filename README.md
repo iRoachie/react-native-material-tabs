@@ -66,6 +66,7 @@ import MaterialTabs from 'react-native-material-tabs';
 | onChange          | none                     | Function      | Handler that's emitted every time the user presses a tab. You can use this to change the selected index |
 | allowFontScaling  | true                     | boolean       | Specifies whether fonts should scale to respect Text Size accessibility settings                        |
 | uppercase         | true                     | boolean       | Specifies whether to uppercase the tab labels                                                           |
+| keyboardShouldPersistTaps | never          | string | Specifies how the [ScrollView](https://facebook.github.io/react-native/docs/scrollview#keyboardshouldpersisttaps) should respond to taps while keyboard is open                          |
 
 ## Example
 
