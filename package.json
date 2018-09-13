@@ -22,7 +22,7 @@
     "flow": "flow check",
     "lint": "eslint **/*.js",
     "format": "eslint --fix **/*.js",
-    "test": "jest"
+    "test": "jest --runInBand"
   },
   "dependencies": {
     "prop-types": "^15.5.10",
