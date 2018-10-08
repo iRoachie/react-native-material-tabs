@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { StyleProp, TextStyle } from 'react-native';
-import type { ContentType } from './components/Tab/Tab';
 
 interface TabsProps {
   /**
@@ -62,7 +61,7 @@ interface TabsProps {
   /**
    * The titles or elements for the individual tabs
    */
-  items: ContentType[];
+  items: Array<string|React.Element>;
 
   /**
    * Optional text style to pass to tab titles
