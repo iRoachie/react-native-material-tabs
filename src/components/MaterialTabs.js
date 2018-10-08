@@ -32,6 +32,8 @@ type State = {
   indicatorPosition: Animated.Value,
 };
 
+const getKeyForTab = (item: ContentType) => (typeof item == 'string') ? item : item.key;
+
 export default class MaterialTabs extends React.Component<Props, State> {
   static propTypes = {
     allowFontScaling: PropTypes.bool,
@@ -174,7 +176,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
               <Tab
                 allowFontScaling={this.props.allowFontScaling}
                 content={item}
-                key={idx}
+                key={getKeyForTab(item)}
                 stretch={!this.props.scrollable}
                 onPress={() => this.props.onChange(idx)}
                 active={idx === this.props.selectedIndex}
