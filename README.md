@@ -58,7 +58,7 @@ import MaterialTabs from 'react-native-material-tabs';
 | indicatorColor    | #fff                     | string        | Color of the indicator                                                                                  |
 | activeTextColor   | #fff                     | string        | Color of the text for the selected tab                                                                  |
 | inactiveTextColor | rgba(255, 255, 255, 0.7) | string        | Color of the text for inactive tabs                                                                     |
-| items             | none                     | array(string) | The headers for the individual tabs                                                                     |
+| items             | none                     | array(string|element) | The headers for the individual tabs                                                                     |
 | selectedIndex     | 0                        | number        | The index of current tab selected. Indexes are mapped to the items prop                                 |
 | scrollable        | false                    | boolean       | Option between having fixed tabs or scrollable tabs                                                     |
 | textStyle         | null                     | object(style) | Text style for tab titles                                                                               |

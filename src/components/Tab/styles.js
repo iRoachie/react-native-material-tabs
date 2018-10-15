@@ -3,7 +3,6 @@
 import styled from 'styled-components';
 import { Platform } from 'react-native';
 import Button from '../Touchable';
-import type { StyleObj } from '../../lib/definitions';
 
 type TabBodyProps = {
   tabHeight: number,

@@ -59,9 +59,9 @@ interface TabsProps {
   scrollable?: boolean;
 
   /**
-   * The titles for the individual tabs
+   * The titles or elements for the individual tabs
    */
-  items: string[];
+  items: Array<string|React.Element>;
 
   /**
    * Optional text style to pass to tab titles
