@@ -22,7 +22,8 @@
     "flow": "flow check",
     "lint": "eslint src",
     "format": "eslint server --fix",
-    "test": "jest --runInBand"
+    "test": "jest --runInBand",
+    "ci": "yarn run flow && yarn run lint && yarn run test"
   },
   "dependencies": {
     "prop-types": "^15.5.10",
