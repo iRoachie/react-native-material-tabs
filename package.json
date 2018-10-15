@@ -65,6 +65,7 @@
   },
   "jest": {
     "preset": "react-native",
+    "collectCoverage": true,
     "moduleNameMapper": {
       "styled-components": "<rootDir>/node_modules/styled-components/dist/styled-components.native.cjs.js"
     }
