@@ -33,7 +33,8 @@ type State = {
   indicatorPosition: Animated.Value,
 };
 
-const getKeyForTab = (item: ContentType) => (typeof item == 'string') ? item : item.key;
+const getKeyForTab = (item: ContentType) =>
+  typeof item == 'string' ? item : item.key;
 
 export default class MaterialTabs extends React.Component<Props, State> {
   static propTypes = {
@@ -47,7 +48,9 @@ export default class MaterialTabs extends React.Component<Props, State> {
     scrollable: PropTypes.bool,
     textStyle: Text.propTypes.style,
     activeTextStyle: Text.propTypes.style,
-    items: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.element])).isRequired,
+    items: PropTypes.arrayOf(
+      PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+    ).isRequired,
     uppercase: PropTypes.bool,
     onChange: PropTypes.func.isRequired,
     keyboardShouldPersistTaps: PropTypes.string,

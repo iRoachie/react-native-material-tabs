@@ -20,8 +20,8 @@
   "license": "MIT",
   "scripts": {
     "flow": "flow check",
-    "lint": "eslint **/*.js",
-    "format": "eslint --fix **/*.js",
+    "lint": "eslint src",
+    "format": "eslint server --fix",
     "test": "jest --runInBand"
   },
   "dependencies": {

@@ -41,27 +41,19 @@ const Tab = ({
   return (
     <TabButton onPress={onPress} tabWidth={tabWidth} stretch={stretch}>
       <TabBody tabHeight={tabHeight}>
-        {
-          (typeof content == 'string') ?
-          (
-            <TabText
-              color={color}
-              style={StyleSheet.flatten([textStyle, activeTextStyle])}
-              allowFontScaling={allowFontScaling}
-            >
-              {uppercase ? content.toUpperCase() : content}
-            </TabText>
-          ) :
-           React.cloneElement(
-            content,
-            {
-              style: [
-                content.props.style,
-                { color: color }
-              ]
-            }
-          )
-        }
+        {typeof content == 'string' ? (
+          <TabText
+            color={color}
+            style={StyleSheet.flatten([textStyle, activeTextStyle])}
+            allowFontScaling={allowFontScaling}
+          >
+            {uppercase ? content.toUpperCase() : content}
+          </TabText>
+        ) : (
+          React.cloneElement(content, {
+            style: [content.props.style, { color: color }],
+          })
+        )}
       </TabBody>
     </TabButton>
   );
