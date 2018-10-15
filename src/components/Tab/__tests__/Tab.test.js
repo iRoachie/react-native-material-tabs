@@ -2,7 +2,7 @@ import React from 'react';
 import Adapter from 'enzyme-adapter-react-16';
 import { create } from 'react-test-renderer';
 import { configure } from 'enzyme';
-import Tab from '../../components/Tab';
+import Tab from '../Tab';
 import { Text } from 'react-native';
 
 configure({ adapter: new Adapter() });
@@ -27,6 +27,7 @@ describe('Components | Tab', function() {
       expect(tree).toMatchSnapshot();
     });
   });
+
   describe('when content is string', function() {
     it('renders text tab', function() {
       const component = (
