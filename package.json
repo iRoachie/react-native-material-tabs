@@ -1,6 +1,6 @@
 {
   "name": "react-native-material-tabs",
-  "version": "3.7.0",
+  "version": "3.8.0",
   "description": "Material Design implementation of Tabs",
   "keywords": [
     "react",
@@ -20,9 +20,10 @@
   "license": "MIT",
   "scripts": {
     "flow": "flow check",
-    "lint": "eslint **/*.js",
-    "format": "eslint --fix **/*.js",
-    "test": "jest --runInBand"
+    "lint": "eslint src",
+    "format": "eslint server --fix",
+    "test": "jest --runInBand",
+    "ci": "yarn run flow && yarn run lint && yarn run test"
   },
   "dependencies": {
     "prop-types": "^15.5.10",
@@ -42,8 +43,10 @@
     "eslint-plugin-prettier": "^2.1.2",
     "eslint-plugin-react": "^7.1.0",
     "eslint-plugin-react-native": "^2.3.2",
-    "flow-bin": "^0.56.0",
+    "flow-bin": "^0.79.1",
+    "husky": "^1.1.2",
     "jest": "21.2.1",
+    "lint-staged": "^7.3.0",
     "prettier": "^1.9.1",
     "react": "16.0.0",
     "react-dom": "^16.2.0",
@@ -64,8 +67,21 @@
   },
   "jest": {
     "preset": "react-native",
+    "collectCoverage": true,
     "moduleNameMapper": {
       "styled-components": "<rootDir>/node_modules/styled-components/dist/styled-components.native.cjs.js"
     }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "flow check",
+      "git add"
+    ]
   }
 }

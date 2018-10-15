@@ -1,13 +1,16 @@
 // @flow
 
 import React from 'react';
+import type { Element } from 'react';
 import { StyleSheet } from 'react-native';
 import { TabText, TabBody, TabButton } from './styles';
 import type { StyleObj } from '../../lib/definitions';
 
+export type ContentType = string | Element<*>;
+
 type TabProps = {
   allowFontScaling: boolean,
-  text: string,
+  content: ContentType,
   tabWidth: number,
   tabHeight: number,
   stretch: boolean,
@@ -25,7 +28,7 @@ const Tab = ({
   activeTextColor,
   active,
   onPress,
-  text,
+  content,
   inActiveTextColor,
   tabWidth,
   tabHeight,
@@ -35,17 +38,22 @@ const Tab = ({
   activeTextStyle,
 }: TabProps) => {
   const color = active ? activeTextColor : inActiveTextColor;
-
   return (
     <TabButton onPress={onPress} tabWidth={tabWidth} stretch={stretch}>
       <TabBody tabHeight={tabHeight}>
-        <TabText
-          color={color}
-          style={StyleSheet.flatten([textStyle, activeTextStyle])}
-          allowFontScaling={allowFontScaling}
-        >
-          {uppercase ? text.toUpperCase() : text}
-        </TabText>
+        {typeof content == 'string' ? (
+          <TabText
+            color={color}
+            style={StyleSheet.flatten([textStyle, activeTextStyle])}
+            allowFontScaling={allowFontScaling}
+          >
+            {uppercase ? content.toUpperCase() : content}
+          </TabText>
+        ) : (
+          React.cloneElement(content, {
+            style: [content.props.style, { color: color }],
+          })
+        )}
       </TabBody>
     </TabButton>
   );

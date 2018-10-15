@@ -7,10 +7,6 @@ type BarProps = {
   barHeight: number,
 };
 
-type TabProps = {
-  barHeight: number,
-};
-
 const Bar = styled.View`
   background-color: ${(props: BarProps) => props.barColor};
   height: ${(props: BarProps) => props.barHeight};
