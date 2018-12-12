@@ -21,8 +21,7 @@
   "scripts": {
     "flow": "flow check",
     "lint": "eslint --fix src",
-    "test": "jest",
-    "ci": "yarn run flow && yarn run lint && yarn run test"
+    "test": "jest"
   },
   "dependencies": {
     "prop-types": "^15.6.2",
