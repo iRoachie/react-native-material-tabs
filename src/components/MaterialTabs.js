@@ -3,7 +3,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Animated, ScrollView, View, Text } from 'react-native';
-import type { StyleObj } from '../lib/definitions';
 import { Bar, TabTrack } from '../lib/styles';
 import values from '../lib/values';
 import Tab from './Tab';
@@ -19,12 +18,12 @@ type Props = {
   indicatorColor: string,
   inactiveTextColor: string,
   scrollable: boolean,
-  textStyle: StyleObj,
-  activeTextStyle: StyleObj,
+  textStyle: any,
+  activeTextStyle: any,
   items: ContentType[],
   uppercase: boolean,
-  onChange: (index: number) => void,
   keyboardShouldPersistTaps: string,
+  onChange: (index: number) => void,
 };
 
 type State = {
@@ -34,7 +33,7 @@ type State = {
 };
 
 const getKeyForTab = (item: ContentType) =>
-  typeof item == 'string' ? item : item.key;
+  typeof item === 'string' ? item : item.key;
 
 export default class MaterialTabs extends React.Component<Props, State> {
   static propTypes = {
@@ -49,7 +48,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
     textStyle: Text.propTypes.style,
     activeTextStyle: Text.propTypes.style,
     items: PropTypes.arrayOf(
-      PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+      PropTypes.oneOfType([PropTypes.string, PropTypes.element])
     ).isRequired,
     uppercase: PropTypes.bool,
     onChange: PropTypes.func.isRequired,
@@ -87,16 +86,18 @@ export default class MaterialTabs extends React.Component<Props, State> {
 
   componentDidUpdate(prevProps: Props) {
     if (this.props.items.length !== prevProps.items.length) {
-      this.bar.measure((_, b, width) => {
-        this.getTabWidth(width);
-      });
+      this.bar &&
+        this.bar.measure((_, b, width) => {
+          this.getTabWidth(width);
+        });
     }
 
     this.selectTab();
   }
 
-  scrollView: ScrollView;
-  bar: View;
+  scrollView: ScrollView | null;
+
+  bar: View | null;
 
   getAnimateValues() {
     const idx = this.props.selectedIndex;
@@ -158,22 +159,28 @@ export default class MaterialTabs extends React.Component<Props, State> {
       useNativeDriver: true,
     }).start();
 
-    this.scrollView.scrollTo({
-      x: this.getAnimateValues().scrollPosition,
-    });
+    if (this.scrollView) {
+      this.scrollView.scrollTo({
+        x: this.getAnimateValues().scrollPosition,
+      });
+    }
   }
 
   renderContent() {
     return (
       <Bar
-        innerRef={ref => (this.bar = ref)}
+        ref={(ref: View | null) => {
+          this.bar = ref;
+        }}
         barColor={this.props.barColor}
         barHeight={this.props.barHeight}
         onLayout={event => this.getTabWidth(event.nativeEvent.layout.width)}
       >
         <ScrollView
           horizontal
-          ref={ref => (this.scrollView = ref)}
+          ref={ref => {
+            this.scrollView = ref;
+          }}
           showsHorizontalScrollIndicator={false}
           keyboardShouldPersistTaps={this.props.keyboardShouldPersistTaps}
           scrollEnabled={this.props.scrollable}

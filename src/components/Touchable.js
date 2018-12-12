@@ -4,15 +4,14 @@ import * as React from 'react';
 import {
   Platform,
   View,
-  ViewStyle,
   TouchableOpacity,
   TouchableNativeFeedback,
 } from 'react-native';
 
 type TouchableProps = {
-  style: ViewStyle,
-  onPress: () => void,
+  style?: any,
   children: React.Node,
+  onPress: () => void,
 };
 
 const Touchable = (props: TouchableProps) =>
@@ -25,5 +24,9 @@ const Touchable = (props: TouchableProps) =>
       <View style={props.style}>{props.children}</View>
     </TouchableNativeFeedback>
   );
+
+Touchable.defaultProps = {
+  style: {},
+};
 
 export default Touchable;

@@ -11,7 +11,6 @@ exports[`Main should apply custom activeTextStyle to active tab 1`] = `
         "backgroundColor": "#13897b",
         "height": 48,
       },
-      undefined,
     ]
   }
 >
@@ -30,21 +29,12 @@ exports[`Main should apply custom activeTextStyle to active tab 1`] = `
               "flexDirection": "row",
               "height": 46,
             },
-            undefined,
           ]
         }
       >
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
           accessible={true}
-          collapsable={undefined}
-          hasTVPreferredFocus={undefined}
-          hitSlop={undefined}
           isTVSelectable={true}
-          nativeID={undefined}
-          onLayout={undefined}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
@@ -57,8 +47,6 @@ exports[`Main should apply custom activeTextStyle to active tab 1`] = `
               "width": 0,
             }
           }
-          testID={undefined}
-          tvParallaxProperties={undefined}
         >
           <View
             style={
@@ -69,16 +57,13 @@ exports[`Main should apply custom activeTextStyle to active tab 1`] = `
                   "justifyContent": "center",
                   "paddingHorizontal": 12,
                 },
-                undefined,
               ]
             }
             tabHeight={48}
           >
             <Text
-              accessible={true}
               allowFontScaling={true}
               color="#fff"
-              ellipsizeMode="tail"
               style={
                 Array [
                   Object {
@@ -100,16 +85,8 @@ exports[`Main should apply custom activeTextStyle to active tab 1`] = `
           </View>
         </View>
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
           accessible={true}
-          collapsable={undefined}
-          hasTVPreferredFocus={undefined}
-          hitSlop={undefined}
           isTVSelectable={true}
-          nativeID={undefined}
-          onLayout={undefined}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
@@ -122,8 +99,6 @@ exports[`Main should apply custom activeTextStyle to active tab 1`] = `
               "width": 0,
             }
           }
-          testID={undefined}
-          tvParallaxProperties={undefined}
         >
           <View
             style={
@@ -134,16 +109,13 @@ exports[`Main should apply custom activeTextStyle to active tab 1`] = `
                   "justifyContent": "center",
                   "paddingHorizontal": 12,
                 },
-                undefined,
               ]
             }
             tabHeight={48}
           >
             <Text
-              accessible={true}
               allowFontScaling={true}
               color="rgba(255, 255, 255, 0.7)"
-              ellipsizeMode="tail"
               style={
                 Array [
                   Object {
@@ -164,7 +136,6 @@ exports[`Main should apply custom activeTextStyle to active tab 1`] = `
         </View>
       </View>
       <View
-        collapsable={undefined}
         color="#fff"
         style={
           Object {
@@ -198,7 +169,6 @@ exports[`Main should apply custom fontFamily to tab 1`] = `
         "backgroundColor": "#13897b",
         "height": 48,
       },
-      undefined,
     ]
   }
 >
@@ -217,21 +187,12 @@ exports[`Main should apply custom fontFamily to tab 1`] = `
               "flexDirection": "row",
               "height": 46,
             },
-            undefined,
           ]
         }
       >
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
           accessible={true}
-          collapsable={undefined}
-          hasTVPreferredFocus={undefined}
-          hitSlop={undefined}
           isTVSelectable={true}
-          nativeID={undefined}
-          onLayout={undefined}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
@@ -244,8 +205,6 @@ exports[`Main should apply custom fontFamily to tab 1`] = `
               "width": 0,
             }
           }
-          testID={undefined}
-          tvParallaxProperties={undefined}
         >
           <View
             style={
@@ -256,16 +215,13 @@ exports[`Main should apply custom fontFamily to tab 1`] = `
                   "justifyContent": "center",
                   "paddingHorizontal": 12,
                 },
-                undefined,
               ]
             }
             tabHeight={48}
           >
             <Text
-              accessible={true}
               allowFontScaling={true}
               color="#fff"
-              ellipsizeMode="tail"
               style={
                 Array [
                   Object {
@@ -287,16 +243,8 @@ exports[`Main should apply custom fontFamily to tab 1`] = `
           </View>
         </View>
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
           accessible={true}
-          collapsable={undefined}
-          hasTVPreferredFocus={undefined}
-          hitSlop={undefined}
           isTVSelectable={true}
-          nativeID={undefined}
-          onLayout={undefined}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
@@ -309,8 +257,6 @@ exports[`Main should apply custom fontFamily to tab 1`] = `
               "width": 0,
             }
           }
-          testID={undefined}
-          tvParallaxProperties={undefined}
         >
           <View
             style={
@@ -321,16 +267,13 @@ exports[`Main should apply custom fontFamily to tab 1`] = `
                   "justifyContent": "center",
                   "paddingHorizontal": 12,
                 },
-                undefined,
               ]
             }
             tabHeight={48}
           >
             <Text
-              accessible={true}
               allowFontScaling={true}
               color="rgba(255, 255, 255, 0.7)"
-              ellipsizeMode="tail"
               style={
                 Array [
                   Object {
@@ -353,7 +296,6 @@ exports[`Main should apply custom fontFamily to tab 1`] = `
         </View>
       </View>
       <View
-        collapsable={undefined}
         color="#fff"
         style={
           Object {
@@ -387,7 +329,6 @@ exports[`Main should display tab labels not uppercased 1`] = `
         "backgroundColor": "#13897b",
         "height": 48,
       },
-      undefined,
     ]
   }
 >
@@ -406,21 +347,12 @@ exports[`Main should display tab labels not uppercased 1`] = `
               "flexDirection": "row",
               "height": 46,
             },
-            undefined,
           ]
         }
       >
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
           accessible={true}
-          collapsable={undefined}
-          hasTVPreferredFocus={undefined}
-          hitSlop={undefined}
           isTVSelectable={true}
-          nativeID={undefined}
-          onLayout={undefined}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
@@ -433,8 +365,6 @@ exports[`Main should display tab labels not uppercased 1`] = `
               "width": 0,
             }
           }
-          testID={undefined}
-          tvParallaxProperties={undefined}
         >
           <View
             style={
@@ -445,16 +375,13 @@ exports[`Main should display tab labels not uppercased 1`] = `
                   "justifyContent": "center",
                   "paddingHorizontal": 12,
                 },
-                undefined,
               ]
             }
             tabHeight={48}
           >
             <Text
-              accessible={true}
               allowFontScaling={true}
               color="#fff"
-              ellipsizeMode="tail"
               style={
                 Array [
                   Object {
@@ -474,16 +401,8 @@ exports[`Main should display tab labels not uppercased 1`] = `
           </View>
         </View>
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
           accessible={true}
-          collapsable={undefined}
-          hasTVPreferredFocus={undefined}
-          hitSlop={undefined}
           isTVSelectable={true}
-          nativeID={undefined}
-          onLayout={undefined}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
@@ -496,8 +415,6 @@ exports[`Main should display tab labels not uppercased 1`] = `
               "width": 0,
             }
           }
-          testID={undefined}
-          tvParallaxProperties={undefined}
         >
           <View
             style={
@@ -508,16 +425,13 @@ exports[`Main should display tab labels not uppercased 1`] = `
                   "justifyContent": "center",
                   "paddingHorizontal": 12,
                 },
-                undefined,
               ]
             }
             tabHeight={48}
           >
             <Text
-              accessible={true}
               allowFontScaling={true}
               color="rgba(255, 255, 255, 0.7)"
-              ellipsizeMode="tail"
               style={
                 Array [
                   Object {
@@ -538,7 +452,6 @@ exports[`Main should display tab labels not uppercased 1`] = `
         </View>
       </View>
       <View
-        collapsable={undefined}
         color="#fff"
         style={
           Object {
@@ -572,7 +485,6 @@ exports[`Main should render without errors 1`] = `
         "backgroundColor": "#13897b",
         "height": 48,
       },
-      undefined,
     ]
   }
 >
@@ -591,21 +503,12 @@ exports[`Main should render without errors 1`] = `
               "flexDirection": "row",
               "height": 46,
             },
-            undefined,
           ]
         }
       >
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
           accessible={true}
-          collapsable={undefined}
-          hasTVPreferredFocus={undefined}
-          hitSlop={undefined}
           isTVSelectable={true}
-          nativeID={undefined}
-          onLayout={undefined}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
@@ -618,8 +521,6 @@ exports[`Main should render without errors 1`] = `
               "width": 0,
             }
           }
-          testID={undefined}
-          tvParallaxProperties={undefined}
         >
           <View
             style={
@@ -630,16 +531,13 @@ exports[`Main should render without errors 1`] = `
                   "justifyContent": "center",
                   "paddingHorizontal": 12,
                 },
-                undefined,
               ]
             }
             tabHeight={48}
           >
             <Text
-              accessible={true}
               allowFontScaling={true}
               color="#fff"
-              ellipsizeMode="tail"
               style={
                 Array [
                   Object {
@@ -659,16 +557,8 @@ exports[`Main should render without errors 1`] = `
           </View>
         </View>
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
           accessible={true}
-          collapsable={undefined}
-          hasTVPreferredFocus={undefined}
-          hitSlop={undefined}
           isTVSelectable={true}
-          nativeID={undefined}
-          onLayout={undefined}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
@@ -681,8 +571,6 @@ exports[`Main should render without errors 1`] = `
               "width": 0,
             }
           }
-          testID={undefined}
-          tvParallaxProperties={undefined}
         >
           <View
             style={
@@ -693,16 +581,13 @@ exports[`Main should render without errors 1`] = `
                   "justifyContent": "center",
                   "paddingHorizontal": 12,
                 },
-                undefined,
               ]
             }
             tabHeight={48}
           >
             <Text
-              accessible={true}
               allowFontScaling={true}
               color="rgba(255, 255, 255, 0.7)"
-              ellipsizeMode="tail"
               style={
                 Array [
                   Object {
@@ -723,7 +608,6 @@ exports[`Main should render without errors 1`] = `
         </View>
       </View>
       <View
-        collapsable={undefined}
         color="#fff"
         style={
           Object {
@@ -757,7 +641,6 @@ exports[`Main when items is an array of react elements should render tabs 1`] = 
         "backgroundColor": "#13897b",
         "height": 48,
       },
-      undefined,
     ]
   }
 >
@@ -776,21 +659,12 @@ exports[`Main when items is an array of react elements should render tabs 1`] = 
               "flexDirection": "row",
               "height": 46,
             },
-            undefined,
           ]
         }
       >
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
           accessible={true}
-          collapsable={undefined}
-          hasTVPreferredFocus={undefined}
-          hitSlop={undefined}
           isTVSelectable={true}
-          nativeID={undefined}
-          onLayout={undefined}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
@@ -803,8 +677,6 @@ exports[`Main when items is an array of react elements should render tabs 1`] = 
               "width": 0,
             }
           }
-          testID={undefined}
-          tvParallaxProperties={undefined}
         >
           <View
             style={
@@ -815,15 +687,11 @@ exports[`Main when items is an array of react elements should render tabs 1`] = 
                   "justifyContent": "center",
                   "paddingHorizontal": 12,
                 },
-                undefined,
               ]
             }
             tabHeight={48}
           >
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
               style={
                 Array [
                   undefined,
@@ -838,16 +706,8 @@ exports[`Main when items is an array of react elements should render tabs 1`] = 
           </View>
         </View>
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
           accessible={true}
-          collapsable={undefined}
-          hasTVPreferredFocus={undefined}
-          hitSlop={undefined}
           isTVSelectable={true}
-          nativeID={undefined}
-          onLayout={undefined}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
@@ -860,8 +720,6 @@ exports[`Main when items is an array of react elements should render tabs 1`] = 
               "width": 0,
             }
           }
-          testID={undefined}
-          tvParallaxProperties={undefined}
         >
           <View
             style={
@@ -872,15 +730,11 @@ exports[`Main when items is an array of react elements should render tabs 1`] = 
                   "justifyContent": "center",
                   "paddingHorizontal": 12,
                 },
-                undefined,
               ]
             }
             tabHeight={48}
           >
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
               style={
                 Array [
                   undefined,
@@ -896,7 +750,6 @@ exports[`Main when items is an array of react elements should render tabs 1`] = 
         </View>
       </View>
       <View
-        collapsable={undefined}
         color="#fff"
         style={
           Object {

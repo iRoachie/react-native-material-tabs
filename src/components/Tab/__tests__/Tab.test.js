@@ -2,14 +2,15 @@ import React from 'react';
 import Adapter from 'enzyme-adapter-react-16';
 import { create } from 'react-test-renderer';
 import { configure } from 'enzyme';
-import Tab from '../Tab';
 import { Text } from 'react-native';
+
+import Tab from '../Tab';
 
 configure({ adapter: new Adapter() });
 
-describe('Components | Tab', function() {
-  describe('when content is react element', function() {
-    it('renders content', function() {
+describe('Components | Tab', () => {
+  describe('when content is react element', () => {
+    it('renders content', () => {
       const component = (
         <Tab
           allowFontScaling
@@ -17,8 +18,8 @@ describe('Components | Tab', function() {
           tabWidth={100}
           tabHeight={100}
           stretch={false}
-          activeTextColor={'red'}
-          inActiveTextColor={'green'}
+          activeTextColor="red"
+          inActiveTextColor="green"
           textStyle={false}
           uppercase
         />
@@ -28,17 +29,17 @@ describe('Components | Tab', function() {
     });
   });
 
-  describe('when content is string', function() {
-    it('renders text tab', function() {
+  describe('when content is string', () => {
+    it('renders text tab', () => {
       const component = (
         <Tab
           allowFontScaling
-          content={'text'}
+          content="text"
           tabWidth={100}
           tabHeight={100}
           stretch={false}
-          activeTextColor={'red'}
-          inActiveTextColor={'green'}
+          activeTextColor="red"
+          inActiveTextColor="green"
           textStyle={false}
           uppercase
         />

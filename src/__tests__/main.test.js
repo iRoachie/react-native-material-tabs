@@ -3,6 +3,7 @@ import { Text } from 'react-native';
 import Adapter from 'enzyme-adapter-react-16';
 import { create } from 'react-test-renderer';
 import { shallow, configure } from 'enzyme';
+
 import MaterialTabs from '../index';
 
 configure({ adapter: new Adapter() });
@@ -12,7 +13,8 @@ let onChange;
 
 describe('Main', () => {
   beforeAll(() => {
-    console.warn = function() {};
+    // eslint-disable-next-line no-console
+    console.warn = jest.fn();
   });
 
   beforeEach(() => {
@@ -47,7 +49,7 @@ describe('Main', () => {
       .props()
       .onPress();
 
-    expect(onChange).toBeCalledWith(1);
+    expect(onChange).toHaveBeenCalledWith(1);
   });
 
   it('should change tabs', () => {
@@ -131,8 +133,8 @@ describe('Main', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  describe('when items is an array of react elements', function() {
-    it('should render tabs', function() {
+  describe('when items is an array of react elements', () => {
+    it('should render tabs', () => {
       const tabs = (
         <MaterialTabs
           selectedIndex={0}

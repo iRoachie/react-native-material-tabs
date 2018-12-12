@@ -61,7 +61,7 @@ interface TabsProps {
   /**
    * The titles or elements for the individual tabs
    */
-  items: Array<string|React.Element>;
+  items: Array<string | React.ReactElement<any>>;
 
   /**
    * Optional text style to pass to tab titles
@@ -92,7 +92,7 @@ interface TabsProps {
    * See: https://facebook.github.io/react-native/docs/scrollview#keyboardshouldpersisttaps
    * Default 'none'.
    */
-  keyboardShouldPersistTaps?: "always" | "never" | "handled";
+  keyboardShouldPersistTaps?: 'always' | 'never' | 'handled';
 }
 
 export default class MaterialTabs extends React.Component<TabsProps> {}

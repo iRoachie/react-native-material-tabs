@@ -4,7 +4,6 @@ import React from 'react';
 import type { Element } from 'react';
 import { StyleSheet } from 'react-native';
 import { TabText, TabBody, TabButton } from './styles';
-import type { StyleObj } from '../../lib/definitions';
 
 export type ContentType = string | Element<*>;
 
@@ -17,9 +16,9 @@ type TabProps = {
   activeTextColor: string,
   inActiveTextColor: string,
   active?: boolean,
-  textStyle: StyleObj,
+  textStyle: any,
   uppercase: boolean,
-  activeTextStyle?: StyleObj,
+  activeTextStyle: any,
   onPress?: () => void,
 };
 
@@ -38,10 +37,11 @@ const Tab = ({
   activeTextStyle,
 }: TabProps) => {
   const color = active ? activeTextColor : inActiveTextColor;
+
   return (
     <TabButton onPress={onPress} tabWidth={tabWidth} stretch={stretch}>
       <TabBody tabHeight={tabHeight}>
-        {typeof content == 'string' ? (
+        {typeof content === 'string' ? (
           <TabText
             color={color}
             style={StyleSheet.flatten([textStyle, activeTextStyle])}
@@ -51,12 +51,17 @@ const Tab = ({
           </TabText>
         ) : (
           React.cloneElement(content, {
-            style: [content.props.style, { color: color }],
+            style: [content.props.style, { color }],
           })
         )}
       </TabBody>
     </TabButton>
   );
+};
+
+Tab.defaultProps = {
+  active: false,
+  onPress: () => null,
 };
 
 export default Tab;
