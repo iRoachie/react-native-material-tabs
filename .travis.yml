@@ -1,10 +1,16 @@
 language: node_js
-cache: yarn
 node_js:
   - stable
 
+cache:
+  yarn: true
+  directories:
+    - node_modules
+
 install:
+  - yarn global add codecov
   - yarn
 
 script:
   - yarn run flow && yarn run lint && yarn run test --runInBand
+  - codecov
