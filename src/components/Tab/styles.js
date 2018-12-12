@@ -1,6 +1,6 @@
 // @flow
 
-import styled from 'styled-components';
+import styled from 'styled-components/native';
 import { Platform } from 'react-native';
 import Button from '../Touchable';
 

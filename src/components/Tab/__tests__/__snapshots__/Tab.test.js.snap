@@ -2,16 +2,8 @@
 
 exports[`Components | Tab when content is react element renders content 1`] = `
 <View
-  accessibilityComponentType={undefined}
-  accessibilityLabel={undefined}
-  accessibilityTraits={undefined}
   accessible={true}
-  collapsable={undefined}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -24,8 +16,6 @@ exports[`Components | Tab when content is react element renders content 1`] = `
       "width": 100,
     }
   }
-  testID={undefined}
-  tvParallaxProperties={undefined}
 >
   <View
     style={
@@ -36,15 +26,11 @@ exports[`Components | Tab when content is react element renders content 1`] = `
           "justifyContent": "center",
           "paddingHorizontal": 12,
         },
-        undefined,
       ]
     }
     tabHeight={100}
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           undefined,
@@ -62,16 +48,8 @@ exports[`Components | Tab when content is react element renders content 1`] = `
 
 exports[`Components | Tab when content is string renders text tab 1`] = `
 <View
-  accessibilityComponentType={undefined}
-  accessibilityLabel={undefined}
-  accessibilityTraits={undefined}
   accessible={true}
-  collapsable={undefined}
-  hasTVPreferredFocus={undefined}
-  hitSlop={undefined}
   isTVSelectable={true}
-  nativeID={undefined}
-  onLayout={undefined}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -84,8 +62,6 @@ exports[`Components | Tab when content is string renders text tab 1`] = `
       "width": 100,
     }
   }
-  testID={undefined}
-  tvParallaxProperties={undefined}
 >
   <View
     style={
@@ -96,16 +72,13 @@ exports[`Components | Tab when content is string renders text tab 1`] = `
           "justifyContent": "center",
           "paddingHorizontal": 12,
         },
-        undefined,
       ]
     }
     tabHeight={100}
   >
     <Text
-      accessible={true}
       allowFontScaling={true}
       color="green"
-      ellipsizeMode="tail"
       style={
         Array [
           Object {

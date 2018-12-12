@@ -1,6 +1,8 @@
 // @flow
 
-import styled from 'styled-components';
+import styled from 'styled-components/native';
+
+import values from './values';
 
 type BarProps = {
   barColor: string,
@@ -14,7 +16,7 @@ const Bar = styled.View`
 
 const TabTrack = styled.View`
   flex-direction: row;
-  height: ${(props: BarProps) => props.barHeight - 2};
+  height: ${(props: BarProps) => props.barHeight - values.indicatorHeight};
 `;
 
 export { Bar, TabTrack };
