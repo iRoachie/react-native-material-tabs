@@ -25,6 +25,7 @@ export const TabButton = styled(Button)`
 
 type TabTextProps = {
   color: string,
+  marginLeft: boolean,
 };
 
 export const TabText = styled.Text`
@@ -32,6 +33,6 @@ export const TabText = styled.Text`
   font-weight: ${Platform.OS === 'ios' ? 500 : 400};
   font-family: ${Platform.OS === 'android' ? 'sans-serif-medium' : 'System'};
   font-size: 14;
+  margin-left: ${(props: TabTextProps) => (props.marginLeft ? 8 : 0)};
   text-align: center;
-  min-width: 100%;
 `;

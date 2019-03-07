@@ -1,20 +1,29 @@
 // @flow
 
 import React from 'react';
-import type { Element } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 import { TabText } from './styles';
-
-export type ContentType = string | Element<*>;
 
 type TabItemProps = {
   activeTextStyle: any,
   allowFontScaling: boolean,
   color: string,
-  content: ContentType,
+  content: any,
   textStyle: any,
   uppercase: boolean,
+};
+
+// Helper fn to get the text from Element or just string and convert or no to upper case
+const getText = (content, uppercase): string => {
+  let text = '';
+  if (typeof content === 'string') {
+    text = content;
+  } else if (content.props.text) {
+    // eslint-disable-next-line prefer-destructuring
+    text = content.props.text;
+  }
+  return uppercase ? text.toUpperCase() : text;
 };
 
 const TabItem = ({
@@ -23,34 +32,41 @@ const TabItem = ({
   color,
   content,
   textStyle,
-  uppercase
+  uppercase,
 }: TabItemProps) => {
   // Just render the simple text
+  const text = (
+    <TabText
+      color={color}
+      style={StyleSheet.flatten([textStyle, activeTextStyle])}
+      allowFontScaling={allowFontScaling}
+      marginLeft={content.props ? !content.props.vertical : false}
+    >
+      {getText(content, uppercase)}
+    </TabText>
+  );
   if (typeof content === 'string') {
-    return (
-      <TabText
-        color={color}
-        style={StyleSheet.flatten([textStyle, activeTextStyle])}
-        allowFontScaling={allowFontScaling}
-      >
-        {uppercase ? content.toUpperCase() : content}
-      </TabText>
-    );
+    return text;
   }
-  // if has a props.type should be icon + label style
-  if (content.props.type) {
+  const icon = React.cloneElement(content, {
+    style: [content.props.style, { color }],
+  });
+  // if has a props.text should be icon + label style
+  if (content.props.text) {
+    const alignmentStyle = {
+      alignItems: 'center',
+      flexDirection: !content.props.vertical ? 'row' : 'column',
+      justifyContent: 'center',
+    };
     return (
-      React.cloneElement(content, {
-        style: [content.props.style, { color }],
-      })
+      <View style={alignmentStyle}>
+        {icon}
+        {text}
+      </View>
     );
   }
   // return just the icon
-  return (
-    React.cloneElement(content, {
-      style: [content.props.style, { color }],
-    })
-  );
-}
+  return icon;
+};
 
 export default TabItem;

@@ -2,9 +2,8 @@
 
 import React from 'react';
 import type { Element } from 'react';
-import { StyleSheet } from 'react-native';
-import { TabButton } from './styles';
-import { TabItem } from './TabItem';
+import { TabBody, TabButton } from './styles';
+import TabItem from './TabItem';
 
 export type ContentType = string | Element<*>;
 
