@@ -3,7 +3,8 @@
 import React from 'react';
 import type { Element } from 'react';
 import { StyleSheet } from 'react-native';
-import { TabText, TabBody, TabButton } from './styles';
+import { TabButton } from './styles';
+import { TabItem } from './TabItem';
 
 export type ContentType = string | Element<*>;
 
@@ -41,19 +42,14 @@ const Tab = ({
   return (
     <TabButton onPress={onPress} tabWidth={tabWidth} stretch={stretch}>
       <TabBody tabHeight={tabHeight}>
-        {typeof content === 'string' ? (
-          <TabText
-            color={color}
-            style={StyleSheet.flatten([textStyle, activeTextStyle])}
-            allowFontScaling={allowFontScaling}
-          >
-            {uppercase ? content.toUpperCase() : content}
-          </TabText>
-        ) : (
-          React.cloneElement(content, {
-            style: [content.props.style, { color }],
-          })
-        )}
+        <TabItem
+          activeTextStyle={activeTextStyle}
+          allowFontScaling={allowFontScaling}
+          color={color}
+          content={content}
+          uppercase={uppercase}
+          textStyle={textStyle}
+        />
       </TabBody>
     </TabButton>
   );
