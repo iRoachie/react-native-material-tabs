@@ -1,323 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Main should apply custom activeTextStyle to active tab 1`] = `
-<View
-  barColor="#13897b"
-  barHeight={48}
-  onLayout={[Function]}
-  style={
-    Array [
-      Object {
-        "backgroundColor": "#13897b",
-        "height": 48,
-      },
-    ]
-  }
->
-  <RCTScrollView
-    horizontal={true}
-    keyboardShouldPersistTaps="never"
-    scrollEnabled={false}
-    showsHorizontalScrollIndicator={false}
-  >
-    <View>
-      <View
-        barHeight={48}
-        style={
-          Array [
-            Object {
-              "flexDirection": "row",
-              "height": 46,
-            },
-          ]
-        }
-      >
-        <View
-          accessible={true}
-          isTVSelectable={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "opacity": 1,
-              "width": 0,
-            }
-          }
-        >
-          <View
-            style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "height": 48,
-                  "justifyContent": "center",
-                  "paddingHorizontal": 12,
-                },
-              ]
-            }
-            tabHeight={48}
-          >
-            <Text
-              allowFontScaling={true}
-              color="#fff"
-              style={
-                Array [
-                  Object {
-                    "color": "#fff",
-                    "fontFamily": "System",
-                    "fontSize": 14,
-                    "fontWeight": "500",
-                    "minWidth": "100%",
-                    "textAlign": "center",
-                  },
-                  Object {
-                    "color": "pink",
-                  },
-                ]
-              }
-            >
-              TAB1
-            </Text>
-          </View>
-        </View>
-        <View
-          accessible={true}
-          isTVSelectable={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "opacity": 1,
-              "width": 0,
-            }
-          }
-        >
-          <View
-            style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "height": 48,
-                  "justifyContent": "center",
-                  "paddingHorizontal": 12,
-                },
-              ]
-            }
-            tabHeight={48}
-          >
-            <Text
-              allowFontScaling={true}
-              color="rgba(255, 255, 255, 0.7)"
-              style={
-                Array [
-                  Object {
-                    "color": "rgba(255, 255, 255, 0.7)",
-                    "fontFamily": "System",
-                    "fontSize": 14,
-                    "fontWeight": "500",
-                    "minWidth": "100%",
-                    "textAlign": "center",
-                  },
-                  Object {},
-                ]
-              }
-            >
-              TAB2
-            </Text>
-          </View>
-        </View>
-      </View>
-      <View
-        color="#fff"
-        style={
-          Object {
-            "backgroundColor": "#fff",
-            "bottom": 0,
-            "height": 2,
-            "position": "absolute",
-            "transform": Array [
-              Object {
-                "translateX": 0,
-              },
-            ],
-            "width": 0,
-          }
-        }
-        tabWidth={0}
-      />
-    </View>
-  </RCTScrollView>
-</View>
-`;
-
-exports[`Main should apply custom fontFamily to tab 1`] = `
-<View
-  barColor="#13897b"
-  barHeight={48}
-  onLayout={[Function]}
-  style={
-    Array [
-      Object {
-        "backgroundColor": "#13897b",
-        "height": 48,
-      },
-    ]
-  }
->
-  <RCTScrollView
-    horizontal={true}
-    keyboardShouldPersistTaps="never"
-    scrollEnabled={false}
-    showsHorizontalScrollIndicator={false}
-  >
-    <View>
-      <View
-        barHeight={48}
-        style={
-          Array [
-            Object {
-              "flexDirection": "row",
-              "height": 46,
-            },
-          ]
-        }
-      >
-        <View
-          accessible={true}
-          isTVSelectable={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "opacity": 1,
-              "width": 0,
-            }
-          }
-        >
-          <View
-            style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "height": 48,
-                  "justifyContent": "center",
-                  "paddingHorizontal": 12,
-                },
-              ]
-            }
-            tabHeight={48}
-          >
-            <Text
-              allowFontScaling={true}
-              color="#fff"
-              style={
-                Array [
-                  Object {
-                    "color": "#fff",
-                    "fontFamily": "System",
-                    "fontSize": 14,
-                    "fontWeight": "500",
-                    "minWidth": "100%",
-                    "textAlign": "center",
-                  },
-                  Object {
-                    "fontFamily": "Papyrus",
-                  },
-                ]
-              }
-            >
-              TAB1
-            </Text>
-          </View>
-        </View>
-        <View
-          accessible={true}
-          isTVSelectable={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "opacity": 1,
-              "width": 0,
-            }
-          }
-        >
-          <View
-            style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "height": 48,
-                  "justifyContent": "center",
-                  "paddingHorizontal": 12,
-                },
-              ]
-            }
-            tabHeight={48}
-          >
-            <Text
-              allowFontScaling={true}
-              color="rgba(255, 255, 255, 0.7)"
-              style={
-                Array [
-                  Object {
-                    "color": "rgba(255, 255, 255, 0.7)",
-                    "fontFamily": "System",
-                    "fontSize": 14,
-                    "fontWeight": "500",
-                    "minWidth": "100%",
-                    "textAlign": "center",
-                  },
-                  Object {
-                    "fontFamily": "Papyrus",
-                  },
-                ]
-              }
-            >
-              TAB2
-            </Text>
-          </View>
-        </View>
-      </View>
-      <View
-        color="#fff"
-        style={
-          Object {
-            "backgroundColor": "#fff",
-            "bottom": 0,
-            "height": 2,
-            "position": "absolute",
-            "transform": Array [
-              Object {
-                "translateX": 0,
-              },
-            ],
-            "width": 0,
-          }
-        }
-        tabWidth={0}
-      />
-    </View>
-  </RCTScrollView>
-</View>
-`;
-
 exports[`Main should display tab labels not uppercased 1`] = `
 <View
   barColor="#13897b"
@@ -382,6 +64,7 @@ exports[`Main should display tab labels not uppercased 1`] = `
             <Text
               allowFontScaling={true}
               color="#fff"
+              marginLeft={false}
               style={
                 Array [
                   Object {
@@ -389,7 +72,7 @@ exports[`Main should display tab labels not uppercased 1`] = `
                     "fontFamily": "System",
                     "fontSize": 14,
                     "fontWeight": "500",
-                    "minWidth": "100%",
+                    "marginLeft": 0,
                     "textAlign": "center",
                   },
                   Object {},
@@ -432,6 +115,7 @@ exports[`Main should display tab labels not uppercased 1`] = `
             <Text
               allowFontScaling={true}
               color="rgba(255, 255, 255, 0.7)"
+              marginLeft={false}
               style={
                 Array [
                   Object {
@@ -439,7 +123,7 @@ exports[`Main should display tab labels not uppercased 1`] = `
                     "fontFamily": "System",
                     "fontSize": 14,
                     "fontWeight": "500",
-                    "minWidth": "100%",
+                    "marginLeft": 0,
                     "textAlign": "center",
                   },
                   Object {},
@@ -538,6 +222,7 @@ exports[`Main should render without errors 1`] = `
             <Text
               allowFontScaling={true}
               color="#fff"
+              marginLeft={false}
               style={
                 Array [
                   Object {
@@ -545,7 +230,7 @@ exports[`Main should render without errors 1`] = `
                     "fontFamily": "System",
                     "fontSize": 14,
                     "fontWeight": "500",
-                    "minWidth": "100%",
+                    "marginLeft": 0,
                     "textAlign": "center",
                   },
                   Object {},
@@ -588,6 +273,7 @@ exports[`Main should render without errors 1`] = `
             <Text
               allowFontScaling={true}
               color="rgba(255, 255, 255, 0.7)"
+              marginLeft={false}
               style={
                 Array [
                   Object {
@@ -595,7 +281,7 @@ exports[`Main should render without errors 1`] = `
                     "fontFamily": "System",
                     "fontSize": 14,
                     "fontWeight": "500",
-                    "minWidth": "100%",
+                    "marginLeft": 0,
                     "textAlign": "center",
                   },
                   Object {},

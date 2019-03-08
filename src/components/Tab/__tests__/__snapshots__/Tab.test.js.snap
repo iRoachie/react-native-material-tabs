@@ -79,6 +79,7 @@ exports[`Components | Tab when content is string renders text tab 1`] = `
     <Text
       allowFontScaling={true}
       color="green"
+      marginLeft={false}
       style={
         Array [
           Object {
@@ -86,7 +87,7 @@ exports[`Components | Tab when content is string renders text tab 1`] = `
             "fontFamily": "System",
             "fontSize": 14,
             "fontWeight": "500",
-            "minWidth": "100%",
+            "marginLeft": 0,
             "textAlign": "center",
           },
           Object {},
