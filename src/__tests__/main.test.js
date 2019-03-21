@@ -147,6 +147,20 @@ describe('Main', () => {
     });
   });
 
+  it('should not move indicator or scroll when first tab is selected', () => {
+    const items = ['Tab1', 'Tab2'];
+    const tabs = new MaterialTabs({
+      selectedIndex: 0,
+      items,
+      tabWidth: 100,
+      onChange,
+      uppercase: false,
+    });
+    const { indicatorPosition, scrollPosition } = tabs.getAnimateValues();
+    expect(indicatorPosition).toBe(0);
+    expect(scrollPosition).toBe(0);
+  });
+
   describe('Parsing user defined tabWidth', () => {
     const mockBarWidth = 100;
 
