@@ -147,18 +147,35 @@ describe('Main', () => {
     });
   });
 
-  it('should not move indicator or scroll when first tab is selected', () => {
-    const items = ['Tab1', 'Tab2'];
-    const tabs = new MaterialTabs({
-      selectedIndex: 0,
-      items,
-      tabWidth: 100,
-      onChange,
-      uppercase: false,
+  describe('indicator and scroll position values', () => {
+    it('should not move indicator or scroll when first tab is selected', () => {
+      const items = ['Tab1', 'Tab2'];
+      const tabs = new MaterialTabs({
+        selectedIndex: 0,
+        items,
+        tabWidth: 100,
+        onChange,
+        uppercase: false,
+      });
+      const { indicatorPosition, scrollPosition } = tabs.getAnimateValues();
+      expect(indicatorPosition).toBe(0);
+      expect(scrollPosition).toBe(0);
     });
-    const { indicatorPosition, scrollPosition } = tabs.getAnimateValues();
-    expect(indicatorPosition).toBe(0);
-    expect(scrollPosition).toBe(0);
+
+    it('should return end value is passed maximum index', () => {
+      const items = ['Tab1', 'Tab2', 'Tab3', 'Tab4', 'Tab5', 'Tab6'];
+      const tabs = new MaterialTabs({
+        selectedIndex: 4,
+        items,
+        tabWidth: 100,
+        onChange,
+        uppercase: false,
+        scrollable: true,
+      });
+      tabs.state = { ...tabs.state, barWidth: 300, tabWidth: 100 };
+      const { scrollPosition } = tabs.getAnimateValues();
+      expect(scrollPosition).toBe('end');
+    });
   });
 
   describe('Parsing user defined tabWidth', () => {
