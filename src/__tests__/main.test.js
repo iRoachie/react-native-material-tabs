@@ -146,4 +146,38 @@ describe('Main', () => {
       expect(tree).toMatchSnapshot();
     });
   });
+
+  describe('Parsing user defined tabWidth', () => {
+    const mockBarWidth = 100;
+
+    it('should parse asbolute width as number', () => {
+      const expected = 300;
+      const userInput = 300;
+      const actual = MaterialTabs.parseUserDefinedTabWidth(
+        mockBarWidth,
+        userInput
+      );
+      expect(actual).toBe(expected);
+    });
+
+    it('should parse asbolute width as string', () => {
+      const expected = 300;
+      const userInput = '300';
+      const actual = MaterialTabs.parseUserDefinedTabWidth(
+        mockBarWidth,
+        userInput
+      );
+      expect(actual).toBe(expected);
+    });
+
+    it('should parse relative width as percentage', () => {
+      const expected = 20;
+      const userInput = '20%';
+      const actual = MaterialTabs.parseUserDefinedTabWidth(
+        mockBarWidth,
+        userInput
+      );
+      expect(actual).toBe(expected);
+    });
+  });
 });
