@@ -14,6 +14,7 @@ type Props = {
   selectedIndex: number,
   barColor: string,
   barHeight: number,
+  tabWidth: number | string,
   activeTextColor: string,
   indicatorColor: string,
   inactiveTextColor: string,
@@ -41,6 +42,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
     selectedIndex: PropTypes.number,
     barColor: PropTypes.string,
     barHeight: PropTypes.number,
+    tabWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     activeTextColor: PropTypes.string,
     indicatorColor: PropTypes.string,
     inactiveTextColor: PropTypes.string,
@@ -60,6 +62,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
     selectedIndex: 0,
     barColor: '#13897b',
     barHeight: values.barHeight,
+    tabWidth: values.tabWidth,
     activeTextColor: '#fff',
     indicatorColor: '#fff',
     inactiveTextColor: 'rgba(255, 255, 255, 0.7)',
@@ -101,54 +104,94 @@ export default class MaterialTabs extends React.Component<Props, State> {
 
   getAnimateValues() {
     const idx = this.props.selectedIndex;
-    const scrollValue = !this.props.scrollable
-      ? this.state.tabWidth
-      : this.state.barWidth * 0.4;
+    const { tabWidth, barWidth } = this.state;
+    const { length } = this.props.items;
 
     // All props for fixed tabs are the same
     if (!this.props.scrollable) {
       return {
-        indicatorPosition: idx === 0 ? 0 : idx * scrollValue,
+        indicatorPosition: idx === 0 ? 0 : idx * tabWidth,
         scrollPosition: 0,
       };
     }
 
-    switch (idx) {
-      case 0: // First tab
-        return {
-          indicatorPosition: 0,
-          scrollPosition: 0,
-        };
-      case 1: // Second tab
-        return {
-          indicatorPosition: this.state.barWidth * 0.5 - scrollValue / 4,
-          scrollPosition: scrollValue * 0.25,
-        };
-      case this.props.items.length - 1: // Last tab
-        return {
-          indicatorPosition:
-            scrollValue * (idx - 1) +
-            (this.state.barWidth * 0.5 - scrollValue / 4),
-          scrollPosition: scrollValue * (idx - 2) + scrollValue * 0.5,
-        };
-      default:
-        // Any tabs between second and last
-        return {
-          indicatorPosition:
-            scrollValue * (idx - 1) +
-            (this.state.barWidth * 0.5 - scrollValue / 4),
-          scrollPosition: scrollValue * 0.25 + scrollValue * (idx - 1),
-        };
+    const midpoint = barWidth * 0.5;
+    const tabPositionOffset = tabWidth / 2;
+    const indicatorPosition = tabWidth * idx;
+    const lastIndex = length - 1;
+    const contentSize = tabWidth * length;
+    const isMaximumScroll = (index: number) =>
+      tabWidth * index + barWidth / 2 > contentSize;
+
+    let maximumIndex;
+
+    for (let i = lastIndex; i >= 0 && !maximumIndex; i -= 1) {
+      if (!isMaximumScroll(i)) {
+        maximumIndex = i;
+      }
     }
+
+    if (typeof maximumIndex === 'undefined') {
+      throw new Error('Unexpected failure to calculate maximum Index');
+    }
+
+    if (indicatorPosition < midpoint) {
+      // Do not scroll if we have not yet reached the midpoint
+      return {
+        indicatorPosition,
+        scrollPosition: 0,
+      };
+    }
+
+    return {
+      indicatorPosition: midpoint + (indicatorPosition - midpoint),
+      scrollPosition:
+        idx >= maximumIndex
+          ? 'end'
+          : indicatorPosition - midpoint + tabPositionOffset,
+    };
   }
 
   getTabWidth(width: number) {
-    if (!this.props.scrollable) {
-      this.setState({ tabWidth: width / this.props.items.length });
-    }
+    const userDefinedWidth =
+      this.props.tabWidth &&
+      MaterialTabs.parseUserDefinedTabWidth(width, this.props.tabWidth);
+    const defaultScrollableTabWidth = width * 0.4;
+
+    const tabWidth = this.props.scrollable
+      ? userDefinedWidth || defaultScrollableTabWidth
+      : width / this.props.items.length;
+
     this.setState({
       barWidth: width,
+      tabWidth,
     });
+  }
+
+  static parseUserDefinedTabWidth(barWidth: number, tabWidth: number | string) {
+    if (typeof tabWidth === 'number') {
+      return tabWidth;
+    }
+
+    if (typeof tabWidth === 'string') {
+      const isPercentage =
+        tabWidth.length > 1 && tabWidth[tabWidth.length - 1] === '%';
+
+      if (isPercentage) {
+        const valueWithoutPercentSymbol = tabWidth.slice(
+          0,
+          tabWidth.length - 1
+        );
+        const numericPercentValue = parseFloat(valueWithoutPercentSymbol);
+        const numericDecimalValue = numericPercentValue / 100;
+
+        return barWidth * numericDecimalValue;
+      }
+
+      return parseFloat(tabWidth);
+    }
+
+    throw new Error('Unreachable');
   }
 
   selectTab() {
@@ -159,10 +202,18 @@ export default class MaterialTabs extends React.Component<Props, State> {
       useNativeDriver: true,
     }).start();
 
-    if (this.scrollView) {
-      this.scrollView.scrollTo({
-        x: this.getAnimateValues().scrollPosition,
-      });
+    const { scrollView } = this;
+
+    if (scrollView) {
+      const { scrollPosition } = this.getAnimateValues();
+
+      if (scrollPosition === 'end') {
+        scrollView.scrollToEnd();
+      } else {
+        scrollView.scrollTo({
+          x: scrollPosition,
+        });
+      }
     }
   }
 
@@ -202,11 +253,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
                     : {}
                 }
                 tabHeight={this.props.barHeight}
-                tabWidth={
-                  !this.props.scrollable
-                    ? this.state.tabWidth
-                    : this.state.barWidth * 0.4
-                }
+                tabWidth={this.state.tabWidth}
                 uppercase={this.props.uppercase}
                 inActiveTextColor={this.props.inactiveTextColor}
               />
@@ -216,11 +263,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
           <Indicator
             color={this.props.indicatorColor}
             value={this.state.indicatorPosition}
-            tabWidth={
-              !this.props.scrollable
-                ? this.state.tabWidth
-                : this.state.barWidth * 0.4
-            }
+            tabWidth={this.state.tabWidth}
           />
         </ScrollView>
       </Bar>

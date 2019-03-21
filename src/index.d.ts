@@ -31,6 +31,15 @@ interface TabsProps {
   barHeight?: number;
 
   /**
+   * Width of each tab as a number or string. Absolute or percentage values.
+   *
+   * e.g. 165, "165", or "20%"
+   *
+   * Default is 40%
+   */
+  tabWidth?: number | string;
+
+  /**
    * Color of the text for the selected tab
    *
    * Default is #fff
