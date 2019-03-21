@@ -14,6 +14,7 @@ type Props = {
   selectedIndex: number,
   barColor: string,
   barHeight: number,
+  tabWidth: number | string,
   activeTextColor: string,
   indicatorColor: string,
   inactiveTextColor: string,
@@ -41,6 +42,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
     selectedIndex: PropTypes.number,
     barColor: PropTypes.string,
     barHeight: PropTypes.number,
+    tabWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     activeTextColor: PropTypes.string,
     indicatorColor: PropTypes.string,
     inactiveTextColor: PropTypes.string,
@@ -60,6 +62,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
     selectedIndex: 0,
     barColor: '#13897b',
     barHeight: values.barHeight,
+    tabWidth: values.tabWidth,
     activeTextColor: '#fff',
     indicatorColor: '#fff',
     inactiveTextColor: 'rgba(255, 255, 255, 0.7)',
@@ -101,9 +104,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
 
   getAnimateValues() {
     const idx = this.props.selectedIndex;
-    const scrollValue = !this.props.scrollable
-      ? this.state.tabWidth
-      : this.state.barWidth * 0.4;
+    const scrollValue = this.state.tabWidth;
 
     // All props for fixed tabs are the same
     if (!this.props.scrollable) {
@@ -143,12 +144,45 @@ export default class MaterialTabs extends React.Component<Props, State> {
   }
 
   getTabWidth(width: number) {
-    if (!this.props.scrollable) {
-      this.setState({ tabWidth: width / this.props.items.length });
-    }
+    const userDefinedWidth =
+      this.props.tabWidth &&
+      MaterialTabs.parseUserDefinedTabWidth(width, this.props.tabWidth);
+    const defaultScrollableTabWidth = width * 0.4;
+
+    const tabWidth = this.props.scrollable
+      ? userDefinedWidth || defaultScrollableTabWidth
+      : width / this.props.items.length;
+
     this.setState({
       barWidth: width,
+      tabWidth,
     });
+  }
+
+  static parseUserDefinedTabWidth(barWidth: number, tabWidth: number | string) {
+    if (typeof tabWidth === 'number') {
+      return tabWidth;
+    }
+
+    if (typeof tabWidth === 'string') {
+      const isPercentage =
+        tabWidth.length > 1 && tabWidth[tabWidth.length - 1] === '%';
+
+      if (isPercentage) {
+        const valueWithoutPercentSymbol = tabWidth.slice(
+          0,
+          tabWidth.length - 1
+        );
+        const numericPercentValue = parseFloat(valueWithoutPercentSymbol);
+        const numericDecimalValue = numericPercentValue / 100;
+
+        return barWidth * numericDecimalValue;
+      }
+
+      return parseFloat(tabWidth);
+    }
+
+    throw new Error('Unreachable');
   }
 
   selectTab() {
@@ -202,11 +236,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
                     : {}
                 }
                 tabHeight={this.props.barHeight}
-                tabWidth={
-                  !this.props.scrollable
-                    ? this.state.tabWidth
-                    : this.state.barWidth * 0.4
-                }
+                tabWidth={this.state.tabWidth}
                 uppercase={this.props.uppercase}
                 inActiveTextColor={this.props.inactiveTextColor}
               />
@@ -216,11 +246,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
           <Indicator
             color={this.props.indicatorColor}
             value={this.state.indicatorPosition}
-            tabWidth={
-              !this.props.scrollable
-                ? this.state.tabWidth
-                : this.state.barWidth * 0.4
-            }
+            tabWidth={this.state.tabWidth}
           />
         </ScrollView>
       </Bar>
