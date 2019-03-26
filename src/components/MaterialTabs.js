@@ -123,16 +123,12 @@ export default class MaterialTabs extends React.Component<Props, State> {
     const isMaximumScroll = (index: number) =>
       tabWidth * index + barWidth / 2 > contentSize;
 
-    let maximumIndex;
+    let maximumIndex = 0;
 
     for (let i = lastIndex; i >= 0 && !maximumIndex; i -= 1) {
       if (!isMaximumScroll(i)) {
         maximumIndex = i;
       }
-    }
-
-    if (typeof maximumIndex === 'undefined') {
-      throw new Error('Unexpected failure to calculate maximum Index');
     }
 
     if (indicatorPosition < midpoint) {
