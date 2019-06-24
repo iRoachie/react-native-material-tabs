@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import values from './constants';
+import constants from './constants';
 
 interface BarProps {
   barColor: string;
@@ -14,7 +14,7 @@ const Bar = styled.View`
 const TabTrack = styled.View`
   flex-direction: row;
   height: ${(props: Pick<BarProps, 'barHeight'>) =>
-    props.barHeight - values.indicatorHeight};
+    props.barHeight - constants.indicatorHeight};
 `;
 
 export { Bar, TabTrack };

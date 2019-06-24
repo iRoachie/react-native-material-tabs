@@ -13,7 +13,7 @@ import Indicator from './Indicator';
 import { ContentType } from './Tab/Tab';
 
 import { Bar, TabTrack } from '../lib/styles';
-import values from '../lib/constants';
+import constants from '../lib/constants';
 
 interface Props extends Pick<ScrollViewProps, 'keyboardShouldPersistTaps'> {
   allowFontScaling: boolean;
@@ -180,7 +180,7 @@ MaterialTabs.defaultProps = {
   allowFontScaling: true,
   selectedIndex: 0,
   barColor: '#13897b',
-  barHeight: values.barHeight,
+  barHeight: constants.barHeight,
   activeTextColor: '#fff',
   indicatorColor: '#fff',
   inactiveTextColor: 'rgba(255, 255, 255, 0.7)',
