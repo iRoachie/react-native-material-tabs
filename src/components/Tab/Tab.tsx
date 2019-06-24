@@ -1,26 +1,22 @@
-// @flow
-
 import React from 'react';
-import type { Element } from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, StyleProp, TextStyle } from 'react-native';
 import { TabText, TabBody, TabButton } from './styles';
 
-export type ContentType = string | Element<*>;
+export type ContentType = string | React.ReactElement;
 
-type TabProps = {
-  allowFontScaling: boolean,
-  content: ContentType,
-  tabWidth: number,
-  tabHeight: number,
-  stretch: boolean,
-  activeTextColor: string,
-  inActiveTextColor: string,
-  active?: boolean,
-  textStyle: any,
-  uppercase: boolean,
-  activeTextStyle: any,
-  onPress?: () => void,
-};
+interface TabProps {
+  allowFontScaling: boolean;
+  content: ContentType;
+  tabWidth: number;
+  tabHeight: number;
+  activeTextColor: string;
+  inActiveTextColor: string;
+  active?: boolean;
+  textStyle: StyleProp<TextStyle>;
+  uppercase: boolean;
+  activeTextStyle?: StyleProp<TextStyle>;
+  onPress(): void;
+}
 
 const Tab = ({
   allowFontScaling,
@@ -31,7 +27,6 @@ const Tab = ({
   inActiveTextColor,
   tabWidth,
   tabHeight,
-  stretch,
   textStyle,
   uppercase,
   activeTextStyle,
@@ -39,7 +34,7 @@ const Tab = ({
   const color = active ? activeTextColor : inActiveTextColor;
 
   return (
-    <TabButton onPress={onPress} tabWidth={tabWidth} stretch={stretch}>
+    <TabButton onPress={onPress} tabWidth={tabWidth}>
       <TabBody tabHeight={tabHeight}>
         {typeof content === 'string' ? (
           <TabText

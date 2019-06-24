@@ -1,29 +1,27 @@
-// @flow
-
 import React from 'react';
 import { Animated } from 'react-native';
 import styled from 'styled-components/native';
 
-import values from '../lib/values';
+import constants from '../lib/constants';
 
-type BarProps = {
-  tabWidth: number,
-  color: string,
-};
+interface BarProps {
+  tabWidth: number;
+  color: string;
+}
 
 const Bar = styled(Animated.View)`
-  height: ${values.indicatorHeight};
+  height: ${constants.indicatorHeight};
   width: ${(props: BarProps) => props.tabWidth};
   position: absolute;
   bottom: 0;
   background-color: ${(props: BarProps) => props.color};
 `;
 
-type IndicatorProps = {
-  color: string,
-  tabWidth: number,
-  value: Animated.Value,
-};
+interface IndicatorProps {
+  color: string;
+  tabWidth: number;
+  value: Animated.Value;
+}
 
 const Indicator = (props: IndicatorProps) => (
   <Bar
