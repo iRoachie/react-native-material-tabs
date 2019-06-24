@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { StyleProp, TextStyle } from 'react-native';
+import React from 'react';
+import { StyleProp, TextStyle, ScrollViewProps } from 'react-native';
 
-interface TabsProps {
+interface TabsProps extends Pick<ScrollViewProps, 'keyboardShouldPersistTaps'> {
   /**
    * Specifies whether fonts should scale to respect Text Size accessibility settings
    *
@@ -86,13 +86,6 @@ interface TabsProps {
    * @param index
    */
   onChange(index: number): void;
-
-  /**
-   * Optional keyboard tap behaviour for the ScrollView.
-   * See: https://facebook.github.io/react-native/docs/scrollview#keyboardshouldpersisttaps
-   * Default 'none'.
-   */
-  keyboardShouldPersistTaps?: 'always' | 'never' | 'handled';
 }
 
 export default class MaterialTabs extends React.Component<TabsProps> {}

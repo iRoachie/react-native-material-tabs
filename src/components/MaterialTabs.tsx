@@ -1,35 +1,39 @@
-// @flow
-
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Animated, ScrollView, View, Text } from 'react-native';
+import {
+  Animated,
+  ScrollView,
+  View,
+  ScrollViewProps,
+  StyleProp,
+  TextStyle,
+} from 'react-native';
 import { Bar, TabTrack } from '../lib/styles';
-import values from '../lib/values';
+import values from '../lib/constants';
 import Tab from './Tab';
 import Indicator from './Indicator';
-import type { ContentType } from './Tab/Tab';
+import { ContentType } from './Tab/Tab';
 
-type Props = {
-  allowFontScaling: boolean,
-  selectedIndex: number,
-  barColor: string,
-  barHeight: number,
-  activeTextColor: string,
-  indicatorColor: string,
-  inactiveTextColor: string,
-  scrollable: boolean,
-  textStyle: any,
-  activeTextStyle: any,
-  items: ContentType[],
-  uppercase: boolean,
-  keyboardShouldPersistTaps: string,
-  onChange: (index: number) => void,
-};
+interface Props extends Pick<ScrollViewProps, 'keyboardShouldPersistTaps'> {
+  allowFontScaling: boolean;
+  selectedIndex: number;
+  barColor: string;
+  barHeight: number;
+  activeTextColor: string;
+  indicatorColor: string;
+  inactiveTextColor: string;
+  scrollable: boolean;
+  textStyle: StyleProp<TextStyle>;
+  activeTextStyle: StyleProp<TextStyle>;
+  items: ContentType[];
+  uppercase: boolean;
+  onChange(index: number): void;
+}
 
 type State = {
-  tabWidth: number,
-  barWidth: number,
-  indicatorPosition: Animated.Value,
+  tabWidth: number;
+  barWidth: number;
+  indicatorPosition: Animated.Value;
 };
 
 const getKeyForTab = (item: ContentType) =>
@@ -45,8 +49,8 @@ export default class MaterialTabs extends React.Component<Props, State> {
     indicatorColor: PropTypes.string,
     inactiveTextColor: PropTypes.string,
     scrollable: PropTypes.bool,
-    textStyle: Text.propTypes.style,
-    activeTextStyle: Text.propTypes.style,
+    textStyle: PropTypes.object,
+    activeTextStyle: PropTypes.object,
     items: PropTypes.arrayOf(
       PropTypes.oneOfType([PropTypes.string, PropTypes.element])
     ).isRequired,
@@ -96,7 +100,6 @@ export default class MaterialTabs extends React.Component<Props, State> {
   }
 
   scrollView: ScrollView | null;
-
   bar: View | null;
 
   getAnimateValues() {
@@ -190,8 +193,7 @@ export default class MaterialTabs extends React.Component<Props, State> {
               <Tab
                 allowFontScaling={this.props.allowFontScaling}
                 content={item}
-                key={getKeyForTab(item)}
-                stretch={!this.props.scrollable}
+                key={getKeyForTab(item) || undefined}
                 onPress={() => this.props.onChange(idx)}
                 active={idx === this.props.selectedIndex}
                 activeTextColor={this.props.activeTextColor}

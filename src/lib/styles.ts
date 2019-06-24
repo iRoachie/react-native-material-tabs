@@ -1,13 +1,10 @@
-// @flow
-
 import styled from 'styled-components/native';
+import values from './constants';
 
-import values from './values';
-
-type BarProps = {
-  barColor: string,
-  barHeight: number,
-};
+interface BarProps {
+  barColor: string;
+  barHeight: number;
+}
 
 const Bar = styled.View`
   background-color: ${(props: BarProps) => props.barColor};
@@ -16,7 +13,8 @@ const Bar = styled.View`
 
 const TabTrack = styled.View`
   flex-direction: row;
-  height: ${(props: BarProps) => props.barHeight - values.indicatorHeight};
+  height: ${(props: Pick<BarProps, 'barHeight'>) =>
+    props.barHeight - values.indicatorHeight};
 `;
 
 export { Bar, TabTrack };

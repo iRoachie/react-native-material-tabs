@@ -1,31 +1,31 @@
-// @flow
-
-import styled from 'styled-components/native';
 import { Platform } from 'react-native';
+import styled from 'styled-components/native';
+
 import Button from '../Touchable';
 
-type TabBodyProps = {
-  tabHeight: number,
-};
+interface TabBodyProps {
+  tabHeight: number;
+}
 
 export const TabBody = styled.View`
   height: ${(props: TabBodyProps) => props.tabHeight};
   align-items: center;
   justify-content: center;
-  padding-horizontal: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
 `;
 
-type TabButtonProps = {
-  tabWidth: number,
-};
+interface TabButtonProps {
+  tabWidth: number;
+}
 
 export const TabButton = styled(Button)`
   width: ${(props: TabButtonProps) => props.tabWidth};
 `;
 
-type TabTextProps = {
-  color: string,
-};
+interface TabTextProps {
+  color: string;
+}
 
 export const TabText = styled.Text`
   color: ${(props: TabTextProps) => props.color};

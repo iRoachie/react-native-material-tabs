@@ -24,7 +24,8 @@ exports[`Components | Tab when content is react element renders content 1`] = `
           "alignItems": "center",
           "height": 100,
           "justifyContent": "center",
-          "paddingHorizontal": 12,
+          "paddingLeft": 12,
+          "paddingRight": 12,
         },
       ]
     }
@@ -70,7 +71,8 @@ exports[`Components | Tab when content is string renders text tab 1`] = `
           "alignItems": "center",
           "height": 100,
           "justifyContent": "center",
-          "paddingHorizontal": 12,
+          "paddingLeft": 12,
+          "paddingRight": 12,
         },
       ]
     }
