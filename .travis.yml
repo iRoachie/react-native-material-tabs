@@ -12,5 +12,5 @@ install:
   - yarn
 
 script:
-  - yarn run flow && yarn run lint && yarn run test --runInBand
+  - yarn run check && yarn run lint && yarn run test --runInBand
   - codecov

@@ -56,11 +56,6 @@ describe('Main', () => {
     const wrapper = shallow(component);
     let tabs = wrapper.find('Tab');
 
-    // Mock scrollTo function
-    wrapper.instance().scrollView = {
-      scrollTo: () => {},
-    };
-
     // Assert initial state
     expect(tabs.at(0).props().active).toBe(true);
 

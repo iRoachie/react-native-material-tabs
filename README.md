@@ -52,25 +52,25 @@ import MaterialTabs from 'react-native-material-tabs';
 
 ## Available Props
 
-| prop              | default                  | type          | description                                                                                             |
-| ----------------- | ------------------------ | ------------- | ------------------------------------------------------------------------------------------------------- |
-| barColor          | #13897b                  | string        | Color of the tab bar                                                                                    |
-| indicatorColor    | #fff                     | string        | Color of the indicator                                                                                  |
-| activeTextColor   | #fff                     | string        | Color of the text for the selected tab                                                                  |
-| inactiveTextColor | rgba(255, 255, 255, 0.7) | string        | Color of the text for inactive tabs                                                                     |
-| items             | none                     | array(string|element) | The headers for the individual tabs                                                                     |
-| selectedIndex     | 0                        | number        | The index of current tab selected. Indexes are mapped to the items prop                                 |
-| scrollable        | false                    | boolean       | Option between having fixed tabs or scrollable tabs                                                     |
-| textStyle         | null                     | object(style) | Text style for tab titles                                                                               |
-| activeTextStyle   | {}                       | object(style) | Optional text style for the selected tab                                                                |
-| onChange          | none                     | Function      | Handler that's emitted every time the user presses a tab. You can use this to change the selected index |
-| allowFontScaling  | true                     | boolean       | Specifies whether fonts should scale to respect Text Size accessibility settings                        |
-| uppercase         | true                     | boolean       | Specifies whether to uppercase the tab labels                                                           |
-| keyboardShouldPersistTaps | never          | string | Specifies how the [ScrollView](https://facebook.github.io/react-native/docs/scrollview#keyboardshouldpersisttaps) should respond to taps while keyboard is open                          |
+| prop                      | default                  | type          | description                                                                                                                                                     |
+| ------------------------- | ------------------------ | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| barColor                  | #13897b                  | string        | Color of the tab bar                                                                                                                                            |
+| indicatorColor            | #fff                     | string        | Color of the indicator                                                                                                                                          |
+| activeTextColor           | #fff                     | string        | Color of the text for the selected tab                                                                                                                          |
+| inactiveTextColor         | rgba(255, 255, 255, 0.7) | string        | Color of the text for inactive tabs                                                                                                                             |
+| items                     | none                     | array(string  | element)                                                                                                                                                        | The headers for the individual tabs |
+| selectedIndex             | 0                        | number        | The index of current tab selected. Indexes are mapped to the items prop                                                                                         |
+| scrollable                | false                    | boolean       | Option between having fixed tabs or scrollable tabs                                                                                                             |
+| textStyle                 | null                     | object(style) | Text style for tab titles                                                                                                                                       |
+| activeTextStyle           | {}                       | object(style) | Optional text style for the selected tab                                                                                                                        |
+| onChange                  | none                     | Function      | Handler that's emitted every time the user presses a tab. You can use this to change the selected index                                                         |
+| allowFontScaling          | true                     | boolean       | Specifies whether fonts should scale to respect Text Size accessibility settings                                                                                |
+| uppercase                 | true                     | boolean       | Specifies whether to uppercase the tab labels                                                                                                                   |
+| keyboardShouldPersistTaps | never                    | string        | Specifies how the [ScrollView](https://facebook.github.io/react-native/docs/scrollview#keyboardshouldpersisttaps) should respond to taps while keyboard is open |
 
 ## Example
 
-![Alt Text](http://i.imgur.com/GYuMgMB.gif)
+![Demo](https://user-images.githubusercontent.com/5962998/59991843-f2e43600-9616-11e9-913b-b8fb8a566d68.gif)
 
 ```jsx
 import React from 'react';
