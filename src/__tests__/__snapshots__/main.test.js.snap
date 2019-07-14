@@ -480,6 +480,164 @@ exports[`Main should display tab labels not uppercased 1`] = `
 </View>
 `;
 
+exports[`Main should render scrollable without errors 1`] = `
+<View
+  barColor="#13897b"
+  barHeight={48}
+  onLayout={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#13897b",
+        "height": 48,
+      },
+    ]
+  }
+>
+  <RCTScrollView
+    horizontal={true}
+    keyboardShouldPersistTaps="never"
+    scrollEnabled={true}
+    showsHorizontalScrollIndicator={false}
+  >
+    <View>
+      <View
+        barHeight={48}
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+              "height": 46,
+            },
+          ]
+        }
+      >
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+              "width": 0,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "height": 48,
+                  "justifyContent": "center",
+                  "paddingLeft": 12,
+                  "paddingRight": 12,
+                },
+              ]
+            }
+            tabHeight={48}
+          >
+            <Text
+              allowFontScaling={true}
+              color="#fff"
+              style={
+                Array [
+                  Object {
+                    "color": "#fff",
+                    "fontFamily": "System",
+                    "fontSize": 14,
+                    "fontWeight": "500",
+                    "minWidth": "100%",
+                    "textAlign": "center",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              TAB1
+            </Text>
+          </View>
+        </View>
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+              "width": 0,
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "height": 48,
+                  "justifyContent": "center",
+                  "paddingLeft": 12,
+                  "paddingRight": 12,
+                },
+              ]
+            }
+            tabHeight={48}
+          >
+            <Text
+              allowFontScaling={true}
+              color="rgba(255, 255, 255, 0.7)"
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(255, 255, 255, 0.7)",
+                    "fontFamily": "System",
+                    "fontSize": 14,
+                    "fontWeight": "500",
+                    "minWidth": "100%",
+                    "textAlign": "center",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              TAB2
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        color="#fff"
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "bottom": 0,
+            "height": 2,
+            "position": "absolute",
+            "transform": Array [
+              Object {
+                "translateX": 0,
+              },
+            ],
+            "width": 0,
+          }
+        }
+        tabWidth={0}
+      />
+    </View>
+  </RCTScrollView>
+</View>
+`;
+
 exports[`Main should render without errors 1`] = `
 <View
   barColor="#13897b"

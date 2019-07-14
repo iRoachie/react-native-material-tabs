@@ -6,6 +6,7 @@ import {
   ScrollViewProps,
   StyleProp,
   TextStyle,
+  I18nManager,
 } from 'react-native';
 
 import Tab from './Tab';
@@ -69,43 +70,24 @@ const MaterialTabs: React.FC<Props> = ({
   const getAnimateValues = () => {
     const scrollValue = !scrollable ? tabWidth : barWidth * 0.4;
 
+    const indicator = I18nManager.isRTL
+      ? -selectedIndex * scrollValue
+      : selectedIndex * scrollValue;
+
     // All props for fixed tabs are the same
     if (!scrollable) {
       return {
-        indicatorPosition:
-          selectedIndex === 0 ? 0 : selectedIndex * scrollValue,
+        indicatorPosition: indicator,
         scrollPosition: 0,
       };
     }
 
-    switch (selectedIndex) {
-      case 0: // First tab
-        return {
-          indicatorPosition: 0,
-          scrollPosition: 0,
-        };
-      case 1: // Second tab
-        return {
-          indicatorPosition: barWidth * 0.5 - scrollValue / 4,
-          scrollPosition: scrollValue * 0.25,
-        };
-      case items.length - 1: // Last tab
-        return {
-          indicatorPosition:
-            scrollValue * (selectedIndex - 1) +
-            (barWidth * 0.5 - scrollValue / 4),
-          scrollPosition: scrollValue * (selectedIndex - 2) + scrollValue * 0.5,
-        };
-      default:
-        // Any tabs between second and last
-        return {
-          indicatorPosition:
-            scrollValue * (selectedIndex - 1) +
-            (barWidth * 0.5 - scrollValue / 4),
-          scrollPosition:
-            scrollValue * 0.25 + scrollValue * (selectedIndex - 1),
-        };
-    }
+    return {
+      indicatorPosition: indicator,
+      scrollPosition: I18nManager.isRTL
+        ? scrollValue * 0.25 + scrollValue * (items.length - selectedIndex - 2)
+        : scrollValue * 0.25 + scrollValue * (selectedIndex - 1),
+    };
   };
 
   const getTabWidth = (width: number) => {
@@ -117,8 +99,10 @@ const MaterialTabs: React.FC<Props> = ({
   };
 
   const selectTab = () => {
+    const values = getAnimateValues();
+
     Animated.spring(indicatorPosition, {
-      toValue: getAnimateValues().indicatorPosition,
+      toValue: values.indicatorPosition,
       tension: 300,
       friction: 20,
       useNativeDriver: true,
@@ -126,7 +110,7 @@ const MaterialTabs: React.FC<Props> = ({
 
     if (scrollView.current) {
       scrollView.current.scrollTo({
-        x: getAnimateValues().scrollPosition,
+        x: values.scrollPosition,
       });
     }
   };
