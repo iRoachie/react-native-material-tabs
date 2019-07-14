@@ -33,6 +33,13 @@ describe('Main', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should render scrollable without errors', () => {
+    const tree = create(
+      <MaterialTabs selectedIndex={0} items={['Tab1', 'Tab2']} scrollable />
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('should render with correct tabs', () => {
     const wrapper = shallow(component);
     const tabs = wrapper.find('Tab');
