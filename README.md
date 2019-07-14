@@ -42,12 +42,39 @@ Start using the component
 
 ```jsx
 import MaterialTabs from 'react-native-material-tabs';
+```
 
-<MaterialTabs
-  items={['One', 'Two', 'Three']}
-  selectedIndex={this.state.selectedTab}
-  onChange={index => this.setState({ selectedTab: index })}
-/>;
+## Usage
+
+![Demo](https://user-images.githubusercontent.com/5962998/59991843-f2e43600-9616-11e9-913b-b8fb8a566d68.gif)
+
+```jsx
+import React, { useState } from 'react';
+import { StyleSheet, SafeAreaView } from 'react-native';
+import MaterialTabs from 'react-native-material-tabs';
+
+const Example = () => {
+  const [selectedTab, setSelectedTab] = useState(0);
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <MaterialTabs
+        items={['One', 'Two', 'Three', 'Four', 'Five']}
+        selectedIndex={selectedTab}
+        onChange={setSelectedTab}
+        barColor="#1fbcd2"
+        indicatorColor="#fffe94"
+        activeTextColor="white"
+      />
+    </SafeAreaView>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
 ```
 
 ## Available Props
@@ -67,44 +94,3 @@ import MaterialTabs from 'react-native-material-tabs';
 | allowFontScaling          | true                     | boolean       | Specifies whether fonts should scale to respect Text Size accessibility settings                                                                                |
 | uppercase                 | true                     | boolean       | Specifies whether to uppercase the tab labels                                                                                                                   |
 | keyboardShouldPersistTaps | never                    | string        | Specifies how the [ScrollView](https://facebook.github.io/react-native/docs/scrollview#keyboardshouldpersisttaps) should respond to taps while keyboard is open |
-
-## Example
-
-![Demo](https://user-images.githubusercontent.com/5962998/59991843-f2e43600-9616-11e9-913b-b8fb8a566d68.gif)
-
-```jsx
-import React from 'react';
-import { StyleSheet, Text, SafeAreaView } from 'react-native';
-import MaterialTabs from 'react-native-material-tabs';
-
-export default class Example extends React.Component {
-  state = {
-    selectedTab: 0,
-  };
-
-  setTab = selectedTab => {
-    this.setState({ selectedTab });
-  };
-
-  render() {
-    return (
-      <SafeAreaView style={styles.container}>
-        <MaterialTabs
-          items={['One', 'Two', 'Three', 'Four', 'Five']}
-          selectedIndex={this.state.selectedTab}
-          onChange={this.setTab}
-          barColor="#1fbcd2"
-          indicatorColor="#fffe94"
-          activeTextColor="white"
-        />
-      </SafeAreaView>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
-```
