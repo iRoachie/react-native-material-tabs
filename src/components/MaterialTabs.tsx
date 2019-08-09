@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import {
   Animated,
   ScrollView,
@@ -57,63 +57,76 @@ const MaterialTabs: React.FC<Props> = ({
   const scrollView = React.createRef<ScrollView>();
   const bar = React.createRef<View>();
 
+  const getTabWidth = useCallback(
+    (width: number) => {
+      if (!scrollable) {
+        setTabWidth(width / items.length);
+      }
+
+      setBarWidth(width);
+    },
+    [items.length, scrollable]
+  );
+
   useEffect(() => {
+    const getAnimateValues = () => {
+      const scrollValue = !scrollable ? tabWidth : barWidth * 0.4;
+
+      const indicator = I18nManager.isRTL
+        ? -selectedIndex * scrollValue
+        : selectedIndex * scrollValue;
+
+      // All props for fixed tabs are the same
+      if (!scrollable) {
+        return {
+          indicatorPosition: indicator,
+          scrollPosition: 0,
+        };
+      }
+
+      return {
+        indicatorPosition: indicator,
+        scrollPosition: I18nManager.isRTL
+          ? scrollValue * 0.25 +
+            scrollValue * (items.length - selectedIndex - 2)
+          : scrollValue * 0.25 + scrollValue * (selectedIndex - 1),
+      };
+    };
+
+    const selectTab = () => {
+      const values = getAnimateValues();
+
+      Animated.spring(indicatorPosition, {
+        toValue: values.indicatorPosition,
+        tension: 300,
+        friction: 20,
+        useNativeDriver: true,
+      }).start();
+
+      if (scrollView.current) {
+        scrollView.current.scrollTo({
+          x: values.scrollPosition,
+        });
+      }
+    };
+
     bar.current &&
       bar.current.measure((_, b, width) => {
         getTabWidth(width);
       });
 
     selectTab();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [items, barWidth]);
-
-  const getAnimateValues = () => {
-    const scrollValue = !scrollable ? tabWidth : barWidth * 0.4;
-
-    const indicator = I18nManager.isRTL
-      ? -selectedIndex * scrollValue
-      : selectedIndex * scrollValue;
-
-    // All props for fixed tabs are the same
-    if (!scrollable) {
-      return {
-        indicatorPosition: indicator,
-        scrollPosition: 0,
-      };
-    }
-
-    return {
-      indicatorPosition: indicator,
-      scrollPosition: I18nManager.isRTL
-        ? scrollValue * 0.25 + scrollValue * (items.length - selectedIndex - 2)
-        : scrollValue * 0.25 + scrollValue * (selectedIndex - 1),
-    };
-  };
-
-  const getTabWidth = (width: number) => {
-    if (!scrollable) {
-      setTabWidth(width / items.length);
-    }
-
-    setBarWidth(width);
-  };
-
-  const selectTab = () => {
-    const values = getAnimateValues();
-
-    Animated.spring(indicatorPosition, {
-      toValue: values.indicatorPosition,
-      tension: 300,
-      friction: 20,
-      useNativeDriver: true,
-    }).start();
-
-    if (scrollView.current) {
-      scrollView.current.scrollTo({
-        x: values.scrollPosition,
-      });
-    }
-  };
+  }, [
+    bar,
+    barWidth,
+    getTabWidth,
+    indicatorPosition,
+    items.length,
+    scrollView,
+    scrollable,
+    selectedIndex,
+    tabWidth,
+  ]);
 
   return (
     items && (
