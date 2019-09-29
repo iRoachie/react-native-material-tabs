@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Touchable works on android 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#ffbcbc",
+        "borderColor": "red",
+        "borderWidth": 1,
+        "height": 100,
+        "justifyContent": "center",
+        "margin": 10,
+        "width": 300,
+      },
+      undefined,
+    ]
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "#333333",
+        "margin": 20,
+      }
+    }
+  >
+    TouchableNativeFeedback is not supported on this platform!
+  </Text>
+</View>
+`;
+
+exports[`Touchable works on iOS 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <View />
+</View>
+`;

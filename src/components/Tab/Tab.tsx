@@ -56,7 +56,6 @@ const Tab = ({
 
 Tab.defaultProps = {
   active: false,
-  onPress: () => null,
 };
 
 export default Tab;
