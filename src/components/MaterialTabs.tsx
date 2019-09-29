@@ -58,7 +58,7 @@ const MaterialTabs: React.FC<Props> = ({
   const bar = React.createRef<View>();
 
   const getTabWidth = useCallback(
-    (width: number) => {
+    (width: number = 0) => {
       if (!scrollable) {
         setTabWidth(width / items.length);
       }
