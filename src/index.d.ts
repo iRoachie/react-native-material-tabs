@@ -86,6 +86,13 @@ interface TabsProps extends Pick<ScrollViewProps, 'keyboardShouldPersistTaps'> {
    * @param index
    */
   onChange(index: number): void;
+
+  /**
+   * Height of the indicator
+   *
+   * Default is 2
+   */
+  indicatorHeight?: number;
 }
 
 export default class MaterialTabs extends React.Component<TabsProps> {}
