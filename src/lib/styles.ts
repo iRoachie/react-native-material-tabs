@@ -11,15 +11,13 @@ const Bar = styled.View`
 `;
 
 interface TabTrackProps {
-  barColor: string;
   barHeight: number;
   indicatorHeight: number;
 }
 
 const TabTrack = styled.View`
   flex-direction: row;
-  height: ${(props: Pick<TabTrackProps, 'barHeight' | 'indicatorHeight'>) =>
-    props.barHeight - props.indicatorHeight};
+  height: ${(props: TabTrackProps) => props.barHeight - props.indicatorHeight};
 `;
 
 export { Bar, TabTrack };
