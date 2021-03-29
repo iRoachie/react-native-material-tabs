@@ -23,6 +23,7 @@ exports[`Main should apply custom activeTextStyle to active tab 1`] = `
     <View>
       <View
         barHeight={48}
+        indicatorHeight={2}
         style={
           Array [
             Object {
@@ -139,6 +140,7 @@ exports[`Main should apply custom activeTextStyle to active tab 1`] = `
       </View>
       <View
         color="#fff"
+        height={2}
         style={
           Object {
             "backgroundColor": "#fff",
@@ -183,6 +185,7 @@ exports[`Main should apply custom fontFamily to tab 1`] = `
     <View>
       <View
         barHeight={48}
+        indicatorHeight={2}
         style={
           Array [
             Object {
@@ -301,6 +304,7 @@ exports[`Main should apply custom fontFamily to tab 1`] = `
       </View>
       <View
         color="#fff"
+        height={2}
         style={
           Object {
             "backgroundColor": "#fff",
@@ -345,6 +349,7 @@ exports[`Main should display tab labels not uppercased 1`] = `
     <View>
       <View
         barHeight={48}
+        indicatorHeight={2}
         style={
           Array [
             Object {
@@ -459,6 +464,7 @@ exports[`Main should display tab labels not uppercased 1`] = `
       </View>
       <View
         color="#fff"
+        height={2}
         style={
           Object {
             "backgroundColor": "#fff",
@@ -503,6 +509,7 @@ exports[`Main should render scrollable without errors 1`] = `
     <View>
       <View
         barHeight={48}
+        indicatorHeight={2}
         style={
           Array [
             Object {
@@ -617,6 +624,7 @@ exports[`Main should render scrollable without errors 1`] = `
       </View>
       <View
         color="#fff"
+        height={2}
         style={
           Object {
             "backgroundColor": "#fff",
@@ -661,6 +669,7 @@ exports[`Main should render without errors 1`] = `
     <View>
       <View
         barHeight={48}
+        indicatorHeight={2}
         style={
           Array [
             Object {
@@ -775,6 +784,7 @@ exports[`Main should render without errors 1`] = `
       </View>
       <View
         color="#fff"
+        height={2}
         style={
           Object {
             "backgroundColor": "#fff",
@@ -819,6 +829,7 @@ exports[`Main when items is an array of react elements should render tabs 1`] = 
     <View>
       <View
         barHeight={48}
+        indicatorHeight={2}
         style={
           Array [
             Object {
@@ -919,6 +930,7 @@ exports[`Main when items is an array of react elements should render tabs 1`] = 
       </View>
       <View
         color="#fff"
+        height={2}
         style={
           Object {
             "backgroundColor": "#fff",
