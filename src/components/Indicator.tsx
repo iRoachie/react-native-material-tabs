@@ -2,15 +2,14 @@ import React from 'react';
 import { Animated } from 'react-native';
 import styled from 'styled-components/native';
 
-import constants from '../lib/constants';
-
 interface BarProps {
   tabWidth: number;
   color: string;
+  height: number;
 }
 
 const Bar = styled(Animated.View)`
-  height: ${constants.indicatorHeight};
+  height: ${(props: BarProps) => props.height};
   width: ${(props: BarProps) => props.tabWidth};
   position: absolute;
   bottom: 0;
@@ -21,6 +20,7 @@ interface IndicatorProps {
   color: string;
   tabWidth: number;
   value: Animated.Value;
+  height: number;
 }
 
 const Indicator = (props: IndicatorProps) => (
@@ -28,6 +28,7 @@ const Indicator = (props: IndicatorProps) => (
     color={props.color}
     style={{ transform: [{ translateX: props.value }] }}
     tabWidth={props.tabWidth}
+    height={props.height}
   />
 );
 
